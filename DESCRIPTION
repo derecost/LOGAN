@@ -3,15 +3,7 @@ Type: Package
 Title: Log File Analysis in International Large-scale Assessments
 Version: 0.0.0.9001
 Author@R: c(
-     person("Denise", "Reis Costa", email = "d.r.costa@cemo.uio.no", role = c("aut", "cre")),
-     person("Rolf", "Vegar Olsen", role = c("ctb")),
-     person("Ronny", "Scherer", role = c("ctb")),
-     person("Bjorn", "Andersson", role = c("ctb")),
-     person("Alexandra", "Niculescu", role = c("ctb")),
-     person("Nani", "Teig", role = c("ctb")),
-     person("Fredrik", "Jensen", role = c("ctb")),
-     person("Jelena", "Radisic", role = c("ctb")),
-     person("Tove", "Stjern Frones", role = c("ctb")))
+     person("Denise", "Reis Costa", email = "d.r.costa@cemo.uio.no", role = c("aut", "cre")))
 Author: Denise Reis Costa <d.r.costa@cemo.uio.no>     
 Maintainer: Denise Reis Costa <d.r.costa@cemo.uio.no>
 Description: It enables users to handle the dataset cleaning for conducting
