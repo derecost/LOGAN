@@ -1,0 +1,39 @@
+#' CM015Q01 item
+#'
+
+#' @source PISA2012
+#'  CBA. \url{http://www.oecd.org/pisa/pisaproducts/database-cbapisa2012.htm}
+
+#' @format A data frame with columns:
+
+#' \describe{
+
+#'  \item{cnt}{A value between 1924 and 2015.}
+
+#'  \item{nc}{Maple products expressed as syrup, total in thousands of gallons.}
+
+#'  \item{schoolid}{Gross value of maple products in thousands of Canadian dollars.}
+
+#'  \item{StIDStd}{Postal code abbreviation for territory or province.}
+
+#'  \item{formid}{Postal code abbreviation for territory or province.}
+
+#'  \item{event}{Postal code abbreviation for territory or province.}
+
+#'  \item{time}{Postal code abbreviation for territory or province.}
+
+#'  \item{event_number}{Postal code abbreviation for territory or province.}
+
+#'  \item{event_value}{Postal code abbreviation for territory or province.}
+
+#'  \item{event_detail}{Postal code abbreviation for territory or province.}
+
+#' }
+
+#' @examples
+
+#' \dontrun{
+
+#'  cm015q01
+#' }
+"cm015q01"
