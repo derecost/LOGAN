@@ -174,6 +174,8 @@ RangeNumberActionsbyVar <- function(data, id.var, var.group) {
                      "Max" = max(n.event))
   #print(n.event.var, n=50)
   n.event.var <- as.data.frame(n.event.var)
+  
+  cat("\n Summary of number of events by country - Individual level")
   pander::pandoc.table(n.event.var,split.tables=100)
 #return(n.event.var)
 }
