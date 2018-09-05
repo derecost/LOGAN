@@ -169,10 +169,12 @@ RangeNumberActionsbyVar <- function(data, id.var, var.group) {
     dplyr::group_by(!!var.group, !!id.var) %>%
     dplyr::summarize(n.event=n()) %>%
     dplyr::group_by(!!var.group) %>%
-    dplyr::summarize(n.STID = n(), min.nevents = min(n.event), average.nevents = mean(n.event),
-                     sd.nevents = sd(n.event), median.nevents = median(n.event),
-                     max.nevents = max(n.event))
-  print(n.event.var, n=50)
-return(n.event.var)
+    dplyr::summarize("Total N" = n(), "Min" = min(n.event), "Average" = mean(n.event),
+                     "SD" = sd(n.event), "Median" = median(n.event),
+                     "Max" = max(n.event))
+  #print(n.event.var, n=50)
+  n.event.var <- as.data.frame(n.event.var)
+  pander::pandoc.table(n.event.var,split.tables=100)
+#return(n.event.var)
 }
 
