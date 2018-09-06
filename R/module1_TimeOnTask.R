@@ -194,7 +194,7 @@ RangeTimeonTaskbyVar <- function(data, tot.var, var.group) {
 # RangeNumberActionsbyVar(data = cp025q01.data, id.var = quo(NewID), var.group = quo(cnt))
 #'
 #' @export
-PlotTimeonTaskbyVar <- function(data, tot.var, performance.item, namevar, namebreaks, namelabels, namexlab, nameylab) {
+PlotTimeonTaskbyVar <- function(data, tot.var, performance.item, namexlab, nameylab) {
 
   data[[performance.item]] <- as.factor(data[[performance.item]])
 
