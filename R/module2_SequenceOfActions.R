@@ -255,7 +255,7 @@ DescriptiveStrategy <-
     pander::pandoc.table(crostab.freqvotat,split.tables=100)
     cat(paste0("Chi-squared = ",round(xtest.crostab$statistic,2),", df = ",xtest.crostab$parameter,
                ", p-value < ", value.p,"\n"))
-    cat(paste0("Tetrachoric/Polychoric correlation = ",round(polychoric.crostab$rho[1,2],4),"\n"))
+    #cat(paste0("Tetrachoric/Polychoric correlation = ",round(polychoric.crostab$rho[1,2],4),"\n"))
 
     if(prod(dim(table(data[, c(strategy.var, performance.item)])))==4){
       phi.crostab <- phi(table(data[, c(strategy.var, performance.item)]))
