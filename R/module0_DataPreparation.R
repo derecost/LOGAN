@@ -161,7 +161,7 @@ DataActionsbyID <- function(data, id.var, event.var, name.var.action) {
 # RangeNumberActionsbyVar(data = cp025q01.data, id.var = quo(NewID), var.group = quo(cnt))
 #'
 #' @export
-RangeNumberActionsbyVar <- function(data, id.var, var.group) {
+RangeNumberActionsbyVar <- function(data, id.var, var.group, save.table = TRUE) {
   id.var <- rlang::enquo(id.var)
   var.group <- rlang::enquo(var.group)
 
@@ -177,6 +177,10 @@ RangeNumberActionsbyVar <- function(data, id.var, var.group) {
   
   cat("\n Summary of number of events by country - Individual level")
   pander::pandoc.table(n.event.var,split.tables=100)
-#return(n.event.var)
+  
+if(save.table == TRUE){
+  return(n.event.var)
+}  
+
 }
 
