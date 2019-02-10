@@ -6,7 +6,6 @@
 #' @param data A \code{matrix} or \code{data.frame}
 #' @param strategy.var strategy.var
 #' @param categ.var categ.var
-#' @param tot.var a vector with the total time. It is a \code{quo()} type.
 #' @param namexlab namexlab
 #' @param nameylab nameylab
 #'

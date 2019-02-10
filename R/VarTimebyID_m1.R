@@ -7,10 +7,8 @@
 #' @param name.var.time name.var.time
 #' @param new.name new.name
 #'
-#' @return
 #' @export
 #'
-#' @examples
 VarTimebyID <- function(data, id.var, time.var, event.var, name.var.time,
                         new.name) {
     id.var <- rlang::enquo(id.var)
