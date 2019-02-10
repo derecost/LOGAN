@@ -11,7 +11,11 @@ PlotTimeonTaskbyVar(data, tot.var, performance.item, namexlab, nameylab)
 
 \item{tot.var}{a vector with the total time. It is a \code{quo()} type.}
 
-\item{var.group}{a vector with the group variable. It is a \code{quo()} type.}
+\item{performance.item}{performance.item}
+
+\item{namexlab}{namexlab}
+
+\item{nameylab}{nameylab}
 }
 \value{
 This function returns a \code{data.frame} with the number of students and number de actions (min-max)

@@ -12,6 +12,8 @@ RangeNumberActionsbyVar(data, id.var, var.group, save.table = TRUE)
 \item{id.var}{a vector with the individuals identification. It is a \code{quo()} type.}
 
 \item{var.group}{a vector with the group variable. It is a \code{quo()} type.}
+
+\item{save.table}{if \code{TRUE}, will return the table printed}
 }
 \value{
 This function returns a \code{data.frame} with the number of students and number de actions (min-max)

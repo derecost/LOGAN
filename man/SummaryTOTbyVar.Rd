@@ -9,11 +9,9 @@ SummaryTOTbyVar(data, tot.var, performance.item)
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
 
+\item{tot.var}{tot.var}
+
 \item{performance.item}{a vector with the group variable. It is a \code{quo()} type.}
-
-\item{start.time}{a vector with the individuals identification. It is a \code{quo()} type.}
-
-\item{end.time}{a vector with the group variable. It is a \code{quo()} type.}
 }
 \value{
 This function returns a \code{data.frame} with the number of students and number de actions (min-max)

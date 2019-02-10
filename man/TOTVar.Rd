@@ -14,6 +14,8 @@ TOTVar(data, starttime.vec, endtime.vec, divBy = NA, tot.var)
 \item{endtime.vec}{a vector with the group variable. It is a \code{quo()} type.}
 
 \item{divBy}{a vector with the group variable. It is a \code{quo()} type.}
+
+\item{tot.var}{tot.var}
 }
 \value{
 This function returns a \code{data.frame} with the number of students and number de actions (min-max)

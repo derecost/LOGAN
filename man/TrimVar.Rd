@@ -7,7 +7,9 @@
 TrimVar(data, trim.vector)
 }
 \arguments{
-\item{x}{A character vector}
+\item{data}{data}
+
+\item{trim.vector}{trim.vector}
 }
 \value{
 This function returns a vector removing trailing and leading spaces

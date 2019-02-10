@@ -9,9 +9,7 @@ NumericTimeVar(data, vector.time)
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
 
-\item{id.var}{a vector with the individuals identification. It is a \code{quo()} type.}
-
-\item{var.group}{a vector with the group variable. It is a \code{quo()} type.}
+\item{vector.time}{vector.time}
 }
 \value{
 This function returns a \code{data.frame} with the number of students and number de actions (min-max)

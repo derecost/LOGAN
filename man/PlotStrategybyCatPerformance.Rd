@@ -10,9 +10,13 @@ PlotStrategybyCatPerformance(data, strategy.var, categ.var, namexlab,
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
 
-\item{tot.var}{a vector with the total time. It is a \code{quo()} type.}
+\item{strategy.var}{strategy.var}
 
-\item{var.group}{a vector with the group variable. It is a \code{quo()} type.}
+\item{categ.var}{categ.var}
+
+\item{namexlab}{namexlab}
+
+\item{nameylab}{nameylab}
 }
 \value{
 This function returns a \code{data.frame} with the number of students and number de actions (min-max)

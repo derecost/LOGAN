@@ -15,16 +15,6 @@ variables are}
 \item{performance.test}{A string with the name of the test performance variable. It is "quo()" type.}
 
 \item{country.id}{A string with the name of the countries variable. It is "quo()" type.}
-
-\item{plotARcSine}{Logical. Default is "TRUE".}
-
-\item{ylab.text}{A character string giving the text of the y-axis in the plot}
-
-\item{xlab.text}{A character string giving the text of the x-axis in the plot}
-
-\item{ylim.vector}{A numeric vector with the limits of the y-axis in the plot}
-
-\item{xlim.vector}{A numeric vector with the limits of the x-axis in the plot}
 }
 \value{
 This function returns a data frame and a plot

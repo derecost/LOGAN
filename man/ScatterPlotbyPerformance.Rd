@@ -11,6 +11,10 @@ ScatterPlotbyPerformance(data, strategy.summary, performance.mean,
 \item{data}{A \code{matrix} or \code{data.frame} where the 'strategy.var' and performance
 variables are}
 
+\item{strategy.summary}{strategy.summary}
+
+\item{performance.mean}{performance.mean}
+
 \item{country.id}{A string with the name of the countries variable. It is "quo()" type.}
 
 \item{ylab.text}{A character string giving the text of the y-axis in the plot}
@@ -20,12 +24,6 @@ variables are}
 \item{ylim.vector}{A numeric vector with the limits of the y-axis in the plot}
 
 \item{xlim.vector}{A numeric vector with the limits of the x-axis in the plot}
-
-\item{strategy.var}{A string with the name of the strategy variable. It is "quo()" type.}
-
-\item{performance.test}{A string with the name of the test performance variable. It is "quo()" type.}
-
-\item{plotARcSine}{Logical. Default is "TRUE".}
 }
 \value{
 This function returns a data frame and a plot

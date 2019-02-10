@@ -9,9 +9,9 @@ FreqActionsSummary(data, freqact.var, var)
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame} where the 'action.var' variable is}
 
-\item{action.var}{a vector with actions. See \code{DataActionsbyID} function.}
+\item{freqact.var}{freqact.var}
 
-\item{actions.search}{A character vector with the actions to be searched.}
+\item{var}{var}
 }
 \value{
 This function returns a \code{data.frame} with the frequency of each specific events
