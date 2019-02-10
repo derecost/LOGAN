@@ -27,16 +27,27 @@ PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var, namexlab
 
     aggregate.data <-  data %>%
         dplyr::group_by(!!strategy.var, !!categ.var) %>%
-        dplyr::summarise(n = n()) %>%
+        dplyr::summarise(n = dplyr::n()) %>%
         dplyr::group_by(!!categ.var) %>%
         dplyr::mutate(freq = 100* n / sum(n))
 
     aggregate.data <- as.data.frame(aggregate.data)
 
-    ggplot(data=aggregate.data, aes_string(x=names(aggregate.data)[2], y=names(aggregate.data)[4], fill=names(aggregate.data)[1])) +
-        geom_bar(stat="identity", position=position_dodge())+ scale_fill_grey() +
-        theme(axis.text.y = element_blank()) +
-        geom_text(aes(label=paste(n, paste0(" (", round(freq,0), "%)"), sep='\n')), vjust=1.1, color="white",
-                  position = position_dodge(0.9), size=3.5) +
-        xlab(namexlab) + ylab(nameylab)
+    ggplot2::ggplot(data = aggregate.data,
+                    ggplot2::aes_string(x    = names(aggregate.data)[2],
+                                        y    = names(aggregate.data)[4],
+                                        fill = names(aggregate.data)[1])) +
+        ggplot2::geom_bar(stat = "identity",
+                          position = ggplot2::position_dodge()) +
+        ggplot2::scale_fill_grey() +
+        ggplot2::theme(axis.text.y = ggplot2::element_blank()) +
+        ggplot2::geom_text(ggplot2::aes(label = paste(n,
+                                                      paste0(" (",
+                                                             round(freq, 0),
+                                                             "%)"),
+                                                      sep = '\n')),
+                           vjust = 1.1, color = "white",
+                           position = ggplot2::position_dodge(0.9), size = 3.5) +
+        ggplot2::xlab(namexlab) +
+        ggplot2::ylab(nameylab)
 }

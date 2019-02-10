@@ -1,6 +1,6 @@
 Package: LOGAN
 Title: Log File Analysis in International Large-scale Assessments
-Version: 0.0.0.9006
+Version: 0.0.0.9007
 Authors@R: c(
     person("Denise", "Reis Costa",
             email = "d.r.costa@cemo.uio.no", role = c("aut", "cre")),
@@ -23,5 +23,6 @@ Imports:
     tidyverse (>= 1.2.1),
     pander (>= 0.6.1),
     psych (>= 1.7.8),
-    foreign (>= 0.8-69)
+    foreign (>= 0.8-69),
+    dplyr, ggplot2, rlang, stringr
 RoxygenNote: 6.1.1

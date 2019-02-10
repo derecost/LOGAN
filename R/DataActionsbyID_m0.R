@@ -22,7 +22,7 @@ DataActionsbyID <- function(data, id.var, event.var, name.var.action) {
         dplyr::group_by(!!id.var) %>%
         dplyr::mutate(!!name.var.action := paste0((!!event.var), collapse = " | "))  %>%
         dplyr::select( -!!event.var) %>%
-        dplyr::filter(row_number(!!id.var) == 1)
+        dplyr::filter(dplyr::row_number(!!id.var) == 1)
 
     return(var_actions)
 }

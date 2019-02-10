@@ -17,23 +17,28 @@
 #' @export
 VarActionPosition <- function(data, action.var, actions.search) {
 
-    for(w in seq(length(actions.search))){
+    for (w in seq(length(actions.search))) {
 
         data1 <- data %>%
-            dplyr::filter(str_detect(get(action.var), actions.search[w]))
+            dplyr::filter(stringr::str_detect(get(action.var), actions.search[w]))
 
         data1$position <- NA
 
-        for(i in seq(length(data1[[action.var]]))){
-            str.STID <- str_locate_all(data1[[action.var]], "\\|")[[i]]
+        for (i in seq(length(data1[[action.var]]))) {
+            str.STID <- stringr::str_locate_all(data1[[action.var]], "\\|")[[i]]
 
-            for(j in seq(dim(str.STID)[1])){
-                if(j == 1){
-                    new.str <- str_sub(data1[[action.var]][i], start=1, end=str.STID[[j]]-2)
-                    pos.str <- ifelse(new.str == actions.search[w], paste0(j , " | "), "")
+            for (j in seq(dim(str.STID)[1])) {
+                if (j == 1) {
+                    new.str <- stringr::str_sub(data1[[action.var]][i],
+                                                start = 1,
+                                                end = str.STID[[j]] - 2)
+                    pos.str <- ifelse(new.str == actions.search[w],
+                                      paste0(j , " | "), "")
                 } else {
-                    new.str <- str_sub(data1[[action.var]][i], start=str.STID[[j-1]]+2, end=str.STID[[j]]-2)
-                    if(new.str == actions.search[w]){
+                    new.str <- stringr::str_sub(data1[[action.var]][i],
+                                                start = str.STID[[j - 1]] + 2,
+                                                end = str.STID[[j]] - 2)
+                    if (new.str == actions.search[w]) {
                         pos.str <- paste0(pos.str, j , " | ")
                     }
                 }

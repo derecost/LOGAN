@@ -20,6 +20,13 @@ PlotTimeonTaskbyVar <- function(data, tot.var, performance.item, namexlab, namey
 
     data[[performance.item]] <- as.factor(data[[performance.item]])
 
-    ggplot2::ggplot(data, aes_string(x=tot.var, fill=performance.item))+ theme_minimal() +  scale_fill_grey() +
-        geom_density(alpha = 0.5)+ xlab(namexlab) + ylab(nameylab) + xlim(0, 5) + ylim(0, 1)
+    ggplot2::ggplot(data, ggplot2::aes_string(x    = tot.var,
+                                              fill = performance.item)) +
+        ggplot2::theme_minimal() +
+        ggplot2::scale_fill_grey() +
+        ggplot2::geom_density(alpha = 0.5) +
+        ggplot2::xlab(namexlab) +
+        ggplot2::ylab(nameylab) +
+        ggplot2::xlim(0, 5) +
+        ggplot2::ylim(0, 1)
 }

@@ -9,9 +9,9 @@
 #' @export
 BoxplotStrategybyPerformance <- function(data, strategy.var, performance.test,
                                          ylab.text, xlab.text) {
-    ggplot2::ggplot(data, aes(x = as.factor(strategy.var), y = performance.test)) +
-        geom_boxplot() +
-        theme_bw() +
-        scale_x_discrete(name=xlab.text) #+
-    #scale_y_continuous(name=ylab.text)
+    ggplot2::ggplot(data, ggplot2::aes(x = as.factor(strategy.var),
+                                       y = performance.test)) +
+        ggplot2::geom_boxplot() +
+        ggplot2::theme_bw() +
+        ggplot2::scale_x_discrete(name = xlab.text)
 }

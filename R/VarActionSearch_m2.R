@@ -21,7 +21,9 @@ VarActionSearch <- function(data, action.var, actions.search) {
         if(i==1){
             data.actionSearch <- stringr::str_count(data[[action.var]],actions.search[i])
         }else{
-            data.actionSearch <- cbind(data.actionSearch,str_count(data[[action.var]],actions.search[i]))
+            data.actionSearch <- cbind(data.actionSearch,
+                                       stringr::str_count(data[[action.var]],
+                                                          actions.search[i]))
         }
     }
     data.actionSearch <- as.data.frame(data.actionSearch)

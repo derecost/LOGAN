@@ -91,7 +91,7 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
     #Chi-squared test of independence
     crostab.freqvotat <- table(data[, c(strategy.var, performance.item)])
     polychoric.crostab <- psych::polychoric(data[, c(strategy.var, performance.item)])
-    xtest.crostab <- chisq.test(crostab.freqvotat)
+    xtest.crostab <- stats::chisq.test(crostab.freqvotat)
 
     cat("Measures of association between",strategy.var,"and",performance.item,"- Individual level")
     crostab.freqvotat <- rbind(crostab.freqvotat, apply(crostab.freqvotat, 2, sum))
@@ -110,7 +110,7 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
     #cat(paste0("Tetrachoric/Polychoric correlation = ",round(polychoric.crostab$rho[1,2],4),"\n"))
 
     if(prod(dim(table(data[, c(strategy.var, performance.item)])))==4){
-        phi.crostab <- phi(table(data[, c(strategy.var, performance.item)]))
+        phi.crostab <- psych::phi(table(data[, c(strategy.var, performance.item)]))
         cat(paste0("Phi coefficient = ", round(phi.crostab, 4), "\n"))
     }
 
@@ -121,16 +121,16 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
 
         if(j==1){
             tab.perftest <- as.matrix.data.frame(rbind(round(length(data2[[performance.test]]),0), round(min(data2[[performance.test]]),2) ,
-                                                       round(quantile(data2[[performance.test]], probs=0.25), 2), round(median(data2[[performance.test]]), 2),
-                                                       round(mean(data2[[performance.test]]), 2), round(sd(data2[[performance.test]]), 2),
-                                                       round(quantile(data2[[performance.test]], probs=0.75),2),
+                                                       round(stats::quantile(data2[[performance.test]], probs=0.25), 2), round(stats::median(data2[[performance.test]]), 2),
+                                                       round(mean(data2[[performance.test]]), 2), round(stats::sd(data2[[performance.test]]), 2),
+                                                       round(stats::quantile(data2[[performance.test]], probs=0.75),2),
                                                        round(max(data2[[performance.test]]), 2)))
             colnames(tab.perftest)[j] <- as.character(tab.freqvotat$Var1[j])
         }else{
             tab.perftest2 <- as.matrix.data.frame(rbind(round(length(data2[[performance.test]]),0), round(min(data2[[performance.test]]),2) ,
-                                                        round(quantile(data2[[performance.test]], probs=0.25), 2), round(median(data2[[performance.test]]), 2),
-                                                        round(mean(data2[[performance.test]]), 2), round(sd(data2[[performance.test]]), 2),
-                                                        round(quantile(data2[[performance.test]], probs=0.75),2),
+                                                        round(stats::quantile(data2[[performance.test]], probs=0.25), 2), round(stats::median(data2[[performance.test]]), 2),
+                                                        round(mean(data2[[performance.test]]), 2), round(stats::sd(data2[[performance.test]]), 2),
+                                                        round(stats::quantile(data2[[performance.test]], probs=0.75),2),
                                                         round(max(data2[[performance.test]]), 2)))
             tab.perftest <- cbind(tab.perftest, tab.perftest2)
             colnames(tab.perftest)[j] <- as.character(tab.freqvotat$Var1[j])
@@ -138,9 +138,9 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
     }
 
     tot.general <- as.matrix.data.frame(rbind(round(length(data[[performance.test]]),0), round(min(data[[performance.test]]),2) ,
-                                              round(quantile(data[[performance.test]], probs=0.25), 2), round(median(data[[performance.test]]), 2),
-                                              round(mean(data[[performance.test]]), 2), round(sd(data[[performance.test]]), 2),
-                                              round(quantile(data[[performance.test]], probs=0.75),2),
+                                              round(stats::quantile(data[[performance.test]], probs=0.25), 2), round(stats::median(data[[performance.test]]), 2),
+                                              round(mean(data[[performance.test]]), 2), round(stats::sd(data[[performance.test]]), 2),
+                                              round(stats::quantile(data[[performance.test]], probs=0.75),2),
                                               round(max(data[[performance.test]]), 2)))
 
     tab.perftest <- cbind(c("Total N", "Min", "1st.Qu", "Median", "Mean", "SD", "3st.Qu", "Max"), tot.general, tab.perftest)

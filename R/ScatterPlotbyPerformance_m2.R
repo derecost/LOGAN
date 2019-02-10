@@ -22,18 +22,13 @@
 # ylim.vector=c(350,600), xlim.vector=c(0,1.4))
 #'
 #' @export
-ScatterPlotbyPerformance <-
-    function(data,
-             strategy.summary,
-             performance.mean,
-             country.id,
-             ylab.text,
-             xlab.text,
-             ylim.vector,
-             xlim.vector) {
+ScatterPlotbyPerformance <- function(data, strategy.summary, performance.mean,
+                                     country.id, ylab.text, xlab.text,
+                                     ylim.vector, xlim.vector) {
 
-        plot(data[[strategy.summary]], data[[performance.mean]],
-             xlab = xlab.text , ylab = ylab.text, ylim=ylim.vector, xlim = xlim.vector)
-        text(data[[strategy.summary]], data[[performance.mean]],
-             labels = data[[country.id]], cex=0.6, pos=3)
-    }
+    graphics::plot(data[[strategy.summary]], data[[performance.mean]],
+                   xlab = xlab.text, ylab = ylab.text,
+                   ylim = ylim.vector, xlim = xlim.vector)
+    graphics::text(data[[strategy.summary]], data[[performance.mean]],
+                   labels = data[[country.id]], cex = 0.6, pos = 3)
+}

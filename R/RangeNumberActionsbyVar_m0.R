@@ -21,10 +21,13 @@ RangeNumberActionsbyVar <- function(data, id.var, var.group, save.table = TRUE) 
 
     n.event.var <- data %>%
         dplyr::group_by(!!var.group, !!id.var) %>%
-        dplyr::summarize(n.event=n()) %>%
+        dplyr::summarize(n.event = dplyr::n()) %>%
         dplyr::group_by(!!var.group) %>%
-        dplyr::summarize("Total N" = n(), "Min" = min(n.event), "Average" = mean(n.event),
-                         "SD" = sd(n.event), "Median" = median(n.event),
+        dplyr::summarize("Total N" = dplyr::n(),
+                         "Min" = min(n.event),
+                         "Average" = mean(n.event),
+                         "SD" = stats::sd(n.event),
+                         "Median" = stats::median(n.event),
                          "Max" = max(n.event))
     #print(n.event.var, n=50)
     n.event.var <- as.data.frame(n.event.var)
