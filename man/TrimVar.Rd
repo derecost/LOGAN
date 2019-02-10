@@ -4,7 +4,7 @@
 \alias{TrimVar}
 \title{Trim variables}
 \usage{
-TrimVar(x)
+TrimVar(data, trim.vector)
 }
 \arguments{
 \item{x}{A character vector}

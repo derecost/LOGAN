@@ -2,7 +2,7 @@
 % Please edit documentation in R/module2_SequenceOfActions.R
 \name{VarActionSearch}
 \alias{VarActionSearch}
-\title{Identify a strategy in the wide format dataset}
+\title{Frequency of specifics events in a variable of Actions}
 \usage{
 VarActionSearch(data, action.var, actions.search)
 }

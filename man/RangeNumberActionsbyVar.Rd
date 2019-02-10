@@ -4,7 +4,7 @@
 \alias{RangeNumberActionsbyVar}
 \title{Check number of students and actions by var}
 \usage{
-RangeNumberActionsbyVar(data, id.var, var.group)
+RangeNumberActionsbyVar(data, id.var, var.group, save.table = TRUE)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}

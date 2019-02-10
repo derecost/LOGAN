@@ -2,10 +2,9 @@
 % Please edit documentation in R/module2_SequenceOfActions.R
 \name{DataArcSinebyPerformance}
 \alias{DataArcSinebyPerformance}
-\title{Plot: Percentage in arcsine values x PISA scores by Country}
+\title{Data: Percentage in arcsine values x PISA scores by Country}
 \usage{
-DataArcSinebyPerformance(data, strategy.var, performance.test, country.id,
-  plotARcSine = TRUE, ylab.text, xlab.text, ylim.vector, xlim.vector)
+DataArcSinebyPerformance(data, strategy.var, performance.test, country.id)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame} where the 'strategy.var' and performance
