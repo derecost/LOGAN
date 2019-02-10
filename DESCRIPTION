@@ -7,10 +7,10 @@ Author@R: c(
             "Waldir", "Leoncio",    email = "waldir.leoncio@gmail.com", role = c("aut")))
 Author: Denise Reis Costa <d.r.costa@cemo.uio.no>     
 Maintainer: Denise Reis Costa <d.r.costa@cemo.uio.no>
-Description: It enables users to handle the dataset cleaning for conducting
-    specific analyses with the log files from two international educational 
-    assessments: Programme of International Student Assessment (PISA) and
-    Programme for International Assessment of Adult Competencies (PIAAC).
+Description: This package enables users to handle the dataset cleaning for
+    conducting specific analyses with the log files from two international
+    educational assessments: the Programme of International Student Assessment
+    (PISA) and the Programme for International Assessment of Adult Competencies
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
