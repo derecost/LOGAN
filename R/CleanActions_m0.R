@@ -15,9 +15,8 @@
 #' @export
 CleanActions <- function(data, event.type, clear.events) {
     event.type <- rlang::enquo(event.type)
-
-    data <- data %>%
-        dplyr::mutate(new.event.type = stringr::str_replace_all(!!event.type,
+    data <- dplyr::mutate(data,
+                          new.event.type = stringr::str_replace_all(!!event.type,
                                                                 clear.events))
     return(data)
 }
