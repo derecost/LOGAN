@@ -1,27 +1,27 @@
 Package: LOGAN
-Type: Package
 Title: Log File Analysis in International Large-scale Assessments
-Version: 0.0.0.9001
-Author@R: c(
-     person("Denise", "Reis Costa", email = "d.r.costa@cemo.uio.no", role = c("aut", "cre")),
-            "Waldir", "Leoncio",    email = "waldir.leoncio@gmail.com", role = c("aut")))
-Author: Denise Reis Costa <d.r.costa@cemo.uio.no>     
-Maintainer: Denise Reis Costa <d.r.costa@cemo.uio.no>
+Version: 0.0.0.9006
+Authors@R: c(
+    person("Denise", "Reis Costa",
+            email = "d.r.costa@cemo.uio.no", role = c("aut", "cre")),
+    person("Waldir", "Leoncio",
+            email = "waldir.leoncio@gmail.com", role = c("aut"))
+    )
 Description: This package enables users to handle the dataset cleaning for
     conducting specific analyses with the log files from two international
     educational assessments: the Programme of International Student Assessment
     (PISA) and the Programme for International Assessment of Adult Competencies
+    (PIAAC).
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
-Suggests: knitr,
-    rmarkdown
+Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 Depends:
     R (>= 2.10)
-Imports: 
+Imports:
     tidyverse (>= 1.2.1),
     pander (>= 0.6.1),
     psych (>= 1.7.8),
     foreign (>= 0.8-69)
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
