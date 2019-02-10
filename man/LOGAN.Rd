@@ -6,13 +6,11 @@
 \alias{LOGAN-package}
 \title{LOGAN: Log File Analysis in International Large-scale Assessments}
 \description{
-Overview of the LOGAN package.
-}
-\details{
-This package enables users to handle the dataset cleaning for conducting
-specific analyses with the log files from two international educational
-assessments: the Programme of International Student Assessment (PISA) and the
-Programme for International Assessment of Adult Competencies (PIAAC).
+This package enables users to handle the dataset cleaning for
+  conducting specific analyses with the log files from two international
+  educational assessments: the Programme of International Student Assessment
+  (PISA) and the Programme for International Assessment of Adult Competencies
+  (PIAAC).
 }
 \section{LOGAN functions}{
  The LOGAN functions
