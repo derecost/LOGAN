@@ -16,14 +16,14 @@ RangeTimeonTaskbyVar <- function(data, tot.var, var.group) {
     tot.var <- rlang::enquo(tot.var)
     var.group <- rlang::enquo(var.group)
 
-    n.event.var <- data %>%
-        dplyr::filter(!is.na(!!tot.var)) %>%
-        dplyr::group_by(!!var.group) %>%
-        dplyr::summarize(n.STID = dplyr::n(), min.tot = min(!!tot.var),
-                         average.tot = mean(!!tot.var),
-                         sd.tot = stats::sd(!!tot.var),
-                         median.tot = stats::median(!!tot.var),
-                         max.tot = max(!!tot.var))
+    filtered.data <- dplyr::filter(data, !is.na(!!tot.var))
+    grouped.data <- dplyr::group_by(filtered.data, !!var.group)
+    n.event.var <- dplyr::summarize(grouped.data,
+                                    n.STID = dplyr::n(), min.tot = min(!!tot.var),
+                                    average.tot = mean(!!tot.var),
+                                    sd.tot = stats::sd(!!tot.var),
+                                    median.tot = stats::median(!!tot.var),
+                                    max.tot = max(!!tot.var))
     print(n.event.var, n = 50)
     return(n.event.var)
 }

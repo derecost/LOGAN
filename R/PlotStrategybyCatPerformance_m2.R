@@ -16,10 +16,6 @@
 #' @export
 PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var, namexlab, nameylab) {
 
-    #must be factor!!
-    #data[[categ.var]] <- as.factor(data[[categ.var]])
-    #data[[strategy.var]] <- as.factor(data[[strategy.var]])
-
     strategy.var <- rlang::enquo(strategy.var)
     categ.var <- rlang::enquo(categ.var)
 
@@ -27,7 +23,7 @@ PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var, namexlab
         dplyr::group_by(!!strategy.var, !!categ.var) %>%
         dplyr::summarise(n = dplyr::n()) %>%
         dplyr::group_by(!!categ.var) %>%
-        dplyr::mutate(freq = 100* n / sum(n))
+        dplyr::mutate(freq = 100 * n / sum(n))
 
     aggregate.data <- as.data.frame(aggregate.data)
 
@@ -45,7 +41,8 @@ PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var, namexlab
                                                              "%)"),
                                                       sep = '\n')),
                            vjust = 1.1, color = "white",
-                           position = ggplot2::position_dodge(0.9), size = 3.5) +
+                           position = ggplot2::position_dodge(0.9),
+                           size = 3.5) +
         ggplot2::xlab(namexlab) +
         ggplot2::ylab(nameylab)
 }

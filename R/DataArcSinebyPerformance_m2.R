@@ -15,19 +15,17 @@
 #' @return This function returns a data frame and a plot
 #'
 #' @export
-DataArcSinebyPerformance <-
-    function(data,
-             strategy.var,
-             performance.test,
-             country.id) {
+DataArcSinebyPerformance <- function(data, strategy.var, performance.test,
+                                     country.id) {
 
         country.id <- rlang::enquo(country.id)
         strategy.var <- rlang::enquo(strategy.var)
         performance.test <- rlang::enquo(performance.test)
 
-        arcsine.PercentInteraction <-  data %>%
-            dplyr::group_by(!!country.id) %>%
-            dplyr::summarise(PercentInteraction = mean(!!strategy.var),
+        grouped.data <- dplyr::group_by(data, !!country.id)
+        arcsine.PercentInteraction <-
+            dplyr::summarise(grouped.data,
+                             PercentInteraction = mean(!!strategy.var),
                              ArcsinePercent = asin(sqrt(PercentInteraction)),
                              MeanPV = mean(!!performance.test))
 

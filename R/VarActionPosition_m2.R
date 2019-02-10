@@ -15,8 +15,8 @@ VarActionPosition <- function(data, action.var, actions.search) {
 
     for (w in seq(length(actions.search))) {
 
-        data1 <- data %>%
-            dplyr::filter(stringr::str_detect(get(action.var), actions.search[w]))
+        data1 <- dplyr::filter(data, stringr::str_detect(get(action.var),
+                                                         actions.search[w]))
 
         data1$position <- NA
 
