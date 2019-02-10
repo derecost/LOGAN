@@ -7,17 +7,20 @@
 CleanActions(data, event.type, clear.events)
 }
 \arguments{
-\item{data}{A \code{matrix} or \code{data.frame} where the 'event.type' variable is}
+\item{data}{A \code{matrix} or \code{data.frame} where the 'event.type'
+variable is}
 
-\item{event.type}{a vector with concatenate events. See \code{ConcatActions} function.}
+\item{event.type}{a vector with concatenate events. See \code{ConcatActions}
+function.}
 
-\item{clear.events}{a vector where all the events to be cleaned are listed. Each element of
-this vector needs to be of a \code{"event"=""} type.}
+\item{clear.events}{a vector where all the events to be cleaned are listed.
+Each element of this vector needs to be of a \code{"event"=""} type.}
 }
 \value{
 This function returns a \code{data.frame} with the 'new.event.type'
-variable that cleaned events from the "event.type" variable.
+  variable that cleaned events from the "event.type" variable.
 }
 \description{
-This function allows you to clean events in the 'event.type' variable
+This function allows you to clean events in the 'event.type'
+  variable
 }

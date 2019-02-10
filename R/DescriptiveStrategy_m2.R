@@ -13,9 +13,9 @@
 #' @return This function returns a report with a descriptive analysis of the strategy and students
 #' performance
 #'
-# @examples
-# DescriptiveStrategy(data=cp025q01.complete, strategy.var="VOTAT1", performance.item="CP025Q01",
-# performance.test= "PV1CPRO", PartialCredit=FALSE)
+#' @examples
+#' DescriptiveStrategy(data=cp025q01.complete, strategy.var="VOTAT1", performance.item="CP025Q01",
+#' performance.test= "PV1CPRO", PartialCredit=FALSE)
 #
 #' @export
 DescriptiveStrategy <- function(data, strategy.var, performance.item,

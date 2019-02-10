@@ -11,9 +11,6 @@
 #' @return This function returns a \code{data.frame} with the number of students and number de actions (min-max)
 #' aggregated by a specific variable.
 #'
-# @examples
-# RangeNumberActionsbyVar(data = cp025q01.data, id.var = quo(NewID), var.group = quo(cnt))
-#'
 #' @export
 RangeNumberActionsbyVar <- function(data, id.var, var.group, save.table = TRUE) {
     id.var <- rlang::enquo(id.var)

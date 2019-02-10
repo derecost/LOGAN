@@ -9,10 +9,6 @@
 #' @return This function returns a \code{data.frame} with the frequency of each specific events
 #' from the \code{actions.search} argument and "Freq.Actions.Search" summary.
 #'
-# @examples
-# VarActionSearch(data = cm015q01.TimeActions, action.var = "ITEM.ACTIONS",
-#                 actions.search = interactive.actions)
-#
 #' @export
 FreqActionsSummary <- function(data, freqact.var, var){
     #Summary table FREQACTIONS by var

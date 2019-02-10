@@ -1,19 +1,17 @@
 #' Frequency of specifics events in a variable of Actions
 #'
-#' This is a function that locates specific events (using the \code{actions.search}
-#' argument) and create new variables associate with this strategy.
+#' This is a function that locates specific events (using the
+#' \code{actions.search} argument) and create new variables associate with this
+#' strategy.
 #'
-#' @param data A \code{matrix} or \code{data.frame} where the 'action.var' variable is
+#' @param data A \code{matrix} or \code{data.frame} where the 'action.var'
+#'   variable is
 #' @param action.var a vector with actions. See \code{DataActionsbyID} function.
 #' @param actions.search A character vector with the actions to be searched.
 #'
-#' @return This function returns a \code{data.frame} with the frequency of each specific events
-#' from the \code{actions.search} argument and "Freq.Actions.Search" summary.
-#'
-# @examples
-# VarActionSearch(data = cm015q01.TimeActions, action.var = "ITEM.ACTIONS",
-#                 actions.search = interactive.actions)
-#
+#' @return This function returns a \code{data.frame} with the frequency of each
+#'   specific events from the \code{actions.search} argument and
+#'   "Freq.Actions.Search" summary.
 #' @export
 VarActionSearch <- function(data, action.var, actions.search) {
 

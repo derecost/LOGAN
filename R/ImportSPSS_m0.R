@@ -7,8 +7,6 @@
 #'
 #' @return This function returns a data frame.
 #'
-# @examples
-# ImportSPSS(filename=".\\CBA_cp025q01_logs12_SPSS.sav")
 #'
 #' @export
 ImportSPSS <- function(filename) {

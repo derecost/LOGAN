@@ -10,8 +10,6 @@
 #' @return This function returns a \code{data.frame} with the number of students and number de actions (min-max)
 #' aggregated by a specific variable.
 #'
-# @examples
-# RangeNumberActionsbyVar(data = cp025q01.data, id.var = quo(NewID), var.group = quo(cnt))
 #'
 #' @export
 SummaryTOTbyVar <- function(data, tot.var, performance.item) {

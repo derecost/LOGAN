@@ -7,14 +7,15 @@
 ConcatActions(data, concat.events)
 }
 \arguments{
-\item{data}{A \code{matrix} or \code{data.frame} where the concatenate events are}
+\item{data}{A \code{matrix} or \code{data.frame} where the concatenate events
+are}
 
-\item{concat.events}{a vector where all the events are listed. Each element of
-this vector needs to be of a \code{quo()} type.}
+\item{concat.events}{a vector where all the events are listed. Each element
+of this vector needs to be of a \code{quo()} type.}
 }
 \value{
-This function returns a \code{data.frame} with the concatenate events in
-the 'event.type' variable.
+This function returns a \code{data.frame} with the concatenate events
+  in the 'event.type' variable.
 }
 \description{
 This function allows you to concatenate event actions from diferent variables

@@ -12,22 +12,16 @@
 #' @return This function returns a \code{data.frame} with the number of students and number de actions (min-max)
 #' aggregated by a specific variable.
 #'
-# @examples
-# RangeNumberActionsbyVar(data = cp025q01.data, id.var = quo(NewID), var.group = quo(cnt))
 #'
 #' @export
 TOTVar <- function(data, starttime.vec, endtime.vec, divBy = NA, tot.var) {
-
-    for(i in seq(length(starttime.vec))){
-        if(is.na(divBy)){
+    for (i in seq(length(starttime.vec))) {
+        if (is.na(divBy)) {
             data$TOT <- data[[endtime.vec[i]]] - data[[starttime.vec[i]]]
         } else{
-            data$TOT <- (data[[endtime.vec[i]]] - data[[starttime.vec[i]]])/divBy
+            data$TOT <- (data[[endtime.vec[i]]] - data[[starttime.vec[i]]]) / divBy
         }
-
-        #names(data)[length(data)] <- paste0(substr(starttime.vec[i], start = 1, stop = 8), ".TOT")
         names(data)[length(data)] <- tot.var
     }
-
     return(data)
 }

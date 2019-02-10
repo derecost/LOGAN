@@ -9,8 +9,9 @@
 #' @return This function returns a vector removing trailing and leading spaces
 #' inside the original vector.
 #'
-# @examples
-# TrimVar(x)
+
+
+
 #'
 #' @export
 TrimVar <- function (data, trim.vector){

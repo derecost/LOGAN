@@ -27,3 +27,7 @@ performance
 This is a function that reports a descriptive analysis of the strategy and students
 performance
 }
+\examples{
+DescriptiveStrategy(data=cp025q01.complete, strategy.var="VOTAT1", performance.item="CP025Q01",
+performance.test= "PV1CPRO", PartialCredit=FALSE)
+}

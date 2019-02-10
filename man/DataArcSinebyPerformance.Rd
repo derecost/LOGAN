@@ -7,19 +7,22 @@
 DataArcSinebyPerformance(data, strategy.var, performance.test, country.id)
 }
 \arguments{
-\item{data}{A \code{matrix} or \code{data.frame} where the 'strategy.var' and performance
-variables are}
+\item{data}{A \code{matrix} or \code{data.frame} where the 'strategy.var' and
+performance variables are}
 
-\item{strategy.var}{A string with the name of the strategy variable. It is "quo()" type.}
+\item{strategy.var}{A string with the name of the strategy variable. It is
+"quo()" type.}
 
-\item{performance.test}{A string with the name of the test performance variable. It is "quo()" type.}
+\item{performance.test}{A string with the name of the test performance
+variable. It is "quo()" type.}
 
-\item{country.id}{A string with the name of the countries variable. It is "quo()" type.}
+\item{country.id}{A string with the name of the countries variable. It is
+"quo()" type.}
 }
 \value{
 This function returns a data frame and a plot
 }
 \description{
-This is a function that calculates the percentage in arcsine and plots it against
-the PISA scores
+This is a function that calculates the percentage in arcsine and plots it
+against the PISA scores
 }

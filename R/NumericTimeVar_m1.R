@@ -5,11 +5,9 @@
 #' @param data A \code{matrix} or \code{data.frame}
 #' @param vector.time vector.time
 #'
-#' @return This function returns a \code{data.frame} with the number of students and number de actions (min-max)
-#' aggregated by a specific variable.
+#' @return This function returns a \code{data.frame} with the number of students
+#'   and number de actions (min-max) aggregated by a specific variable.
 #'
-# @examples
-# RangeNumberActionsbyVar(data = cp025q01.data, id.var = quo(NewID), var.group = quo(cnt))
 #'
 #' @export
 NumericTimeVar <- function(data, vector.time){

@@ -18,10 +18,10 @@ PlotTimeonTaskbyVar(data, tot.var, performance.item, namexlab, nameylab)
 \item{nameylab}{nameylab}
 }
 \value{
-This function returns a \code{data.frame} with the number of students and number de actions (min-max)
-aggregated by a specific variable.
+This function returns a \code{data.frame} with the number of students
+  and number de actions (min-max) aggregated by a specific variable.
 }
 \description{
-This is a function that reports the number of students and number de actions (min-max)
-aggregated by a specific variable.
+This is a function that reports the number of students and number de actions
+(min-max) aggregated by a specific variable.
 }

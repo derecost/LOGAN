@@ -15,11 +15,6 @@
 #'
 #' @return This function returns a data frame and a plot
 #'
-# @examples
-# DataArcSinebyPerformance(data= cp025q01.complete, strategy.var= quo(VOTAT1),
-# performance.test=quo(PV1CPRO), country.id=quo(cnt), plotARcSine=T,
-# ylab.text= 'PV1CPRO', xlab.text='VOTAT (percentage transformed in arcsine values)',
-# ylim.vector=c(350,600), xlim.vector=c(0,1.4))
 #'
 #' @export
 ScatterPlotbyPerformance <- function(data, strategy.summary, performance.mean,

@@ -1,17 +1,16 @@
-#' Clean events
+#' @title Clean events
+#' @description This function allows you to clean events in the 'event.type'
+#'   variable
 #'
-#' This function allows you to clean events in the 'event.type' variable
-#'
-#' @param data A \code{matrix} or \code{data.frame} where the 'event.type' variable is
-#' @param event.type a vector with concatenate events. See \code{ConcatActions} function.
-#' @param clear.events a vector where all the events to be cleaned are listed. Each element of
-#' this vector needs to be of a \code{"event"=""} type.
+#' @param data A \code{matrix} or \code{data.frame} where the 'event.type'
+#'   variable is
+#' @param event.type a vector with concatenate events. See \code{ConcatActions}
+#'   function.
+#' @param clear.events a vector where all the events to be cleaned are listed.
+#'   Each element of this vector needs to be of a \code{"event"=""} type.
 #'
 #' @return This function returns a \code{data.frame} with the 'new.event.type'
-#' variable that cleaned events from the "event.type" variable.
-#'
-# @examples
-# ConcatActions(cp025q01.data, concat.events)
+#'   variable that cleaned events from the "event.type" variable.
 #'
 #' @export
 CleanActions <- function(data, event.type, clear.events) {

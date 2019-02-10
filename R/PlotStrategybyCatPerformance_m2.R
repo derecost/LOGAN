@@ -1,7 +1,7 @@
 #' Check response time by var
 #'
-#' This is a function that reports the number of students and number de actions (min-max)
-#' aggregated by a specific variable.
+#' This is a function that reports the number of students and number de actions
+#' (min-max) aggregated by a specific variable.
 #'
 #' @param data A \code{matrix} or \code{data.frame}
 #' @param strategy.var strategy.var
@@ -9,11 +9,9 @@
 #' @param namexlab namexlab
 #' @param nameylab nameylab
 #'
-#' @return This function returns a \code{data.frame} with the number of students and number de actions (min-max)
-#' aggregated by a specific variable.
+#' @return This function returns a \code{data.frame} with the number of students
+#'   and number de actions (min-max) aggregated by a specific variable.
 #'
-# @examples
-# RangeNumberActionsbyVar(data = cp025q01.data, id.var = quo(NewID), var.group = quo(cnt))
 #'
 #' @export
 PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var, namexlab, nameylab) {

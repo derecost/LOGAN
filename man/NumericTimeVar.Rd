@@ -12,8 +12,8 @@ NumericTimeVar(data, vector.time)
 \item{vector.time}{vector.time}
 }
 \value{
-This function returns a \code{data.frame} with the number of students and number de actions (min-max)
-aggregated by a specific variable.
+This function returns a \code{data.frame} with the number of students
+  and number de actions (min-max) aggregated by a specific variable.
 }
 \description{
 This is a function that transforms a factor var time in numeric.
