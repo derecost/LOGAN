@@ -9,26 +9,16 @@
 Overview of the LOGAN package.
 }
 \details{
-It enables users to handle the dataset cleaning for conducting
+This package enables users to handle the dataset cleaning for conducting
 specific analyses with the log files from two international educational
-assessments: Programme of International Student Assessment (PISA) and
+assessments: the Programme of International Student Assessment (PISA) and the
 Programme for International Assessment of Adult Competencies (PIAAC).
 }
 \section{LOGAN functions}{
-
-The LOGAN functions: ...
+ The LOGAN functions
 }
 
 \author{
-\describe{
-\item{Denise Reis Costa [aut, cre],}
-\item{Rolf Vegar Olsen [ctb],}
-\item{Ronny Scherer [ctb],}
-\item{Bjorn Andersson [ctb],}
-\item{Alexandra Niculescu [ctb],}
-\item{Nani Teig [ctb],}
-\item{Fredrik Jensen [ctb],}
-\item{Jelena Radisic [ctb],}
-\item{Tove Stjern Frones [ctb]}
-}
+\itemize{ \item{Denise Reis Costa [aut, cre]}, \item{Waldir Leoncio
+  Netto [aut]}}
 }
