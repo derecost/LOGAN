@@ -9,8 +9,8 @@ Authors@R: c(
     )
 Description: This package enables users to handle the dataset cleaning for
     conducting specific analyses with the log files from two international
-    educational assessments: the Programme of International Student Assessment
-    (PISA) and the Programme for International Assessment of Adult Competencies
+    educational assessments: the Programme for International Student Assessment
+    (PISA) and the Programme for the International Assessment of Adult Competencies
     (PIAAC).
 License: GPL (>= 2)
 Encoding: UTF-8
