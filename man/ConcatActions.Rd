@@ -7,17 +7,28 @@
 ConcatActions(data, concat.events)
 }
 \arguments{
-\item{data}{A \code{matrix} or \code{data.frame} where the concatenate events
-are}
+\item{data}{A \code{matrix} or \code{data.frame} where the concatenated
+events are}
 
 \item{concat.events}{a vector where all the events are listed. Each element
 of this vector needs to be of a \code{quo()} type.}
 }
 \value{
-This function returns a \code{data.frame} with the concatenate events
-  in the 'event.type' variable.
+This function returns a \code{data.frame} with the concatenated
+  events in the 'event.type' variable.
 }
 \description{
 This function allows you to concatenate event actions from diferent variables
 in a unique vector.
+}
+\details{
+The output dataset will be identical to the input dataset, except
+  for the addition of one column in the end, called "event.type". Each row of
+  event.type contains the values of concat.events of all the rows.
+}
+\examples{
+df <- cp025q01.complete
+df100 <- head(df100)  # for speed
+df100_conc <- ConcatActions(df100, df100$CP025Q01.ACTIONS)
+
 }
