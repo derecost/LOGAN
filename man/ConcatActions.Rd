@@ -28,7 +28,7 @@ The output dataset will be identical to the input dataset, except
 }
 \examples{
 df <- cp025q01.complete
-df100 <- head(df100)  # for speed
+df100 <- head(df, 100)  # for speed
 df100_conc <- ConcatActions(df100, df100$CP025Q01.ACTIONS)
 
 }
