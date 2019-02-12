@@ -11,6 +11,9 @@
 #'
 VarTimebyID <- function(data, id.var, time.var, event.var, name.var.time,
                         new.name) {
+    `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
+    `:=` <- rlang::`:=`  # Placeholder before removal of quasiquotation
+
     id.var <- rlang::enquo(id.var)
     event.var <- rlang::enquo(event.var)
     time.var <- rlang::enquo(time.var)

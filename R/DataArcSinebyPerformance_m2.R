@@ -17,7 +17,7 @@
 #' @export
 DataArcSinebyPerformance <- function(data, strategy.var, performance.test,
                                      country.id) {
-
+        PercentInteraction <- NULL # Works around the "no visible binding for global variable" note
         country.id <- rlang::enquo(country.id)
         strategy.var <- rlang::enquo(strategy.var)
         performance.test <- rlang::enquo(performance.test)

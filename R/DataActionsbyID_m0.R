@@ -12,10 +12,13 @@
 #'
 #' @export
 DataActionsbyID <- function(data, id.var, event.var, name.var.action) {
+    `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
+    `:=` <- rlang::`:=`  # Placeholder before removal of quasiquotation
+
     id.var <- rlang::enquo(id.var)
     event.var <- rlang::enquo(event.var)
 
-    var_actions <-   data %>%
+    var_actions <- data %>%
         dplyr::group_by(!!id.var) %>%
         dplyr::mutate(!!name.var.action := paste0((!!event.var), collapse = " | "))  %>%
         dplyr::select( -!!event.var) %>%

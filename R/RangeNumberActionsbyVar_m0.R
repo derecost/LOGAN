@@ -13,6 +13,8 @@
 #'
 #' @export
 RangeNumberActionsbyVar <- function(data, id.var, var.group, save.table = TRUE) {
+    `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
+    n.event <- NULL # Works around the "no visible binding for global variable" note
     id.var <- rlang::enquo(id.var)
     var.group <- rlang::enquo(var.group)
 

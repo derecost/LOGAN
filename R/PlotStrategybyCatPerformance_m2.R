@@ -14,8 +14,11 @@
 #'
 #'
 #' @export
-PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var, namexlab, nameylab) {
-
+PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var,
+                                         namexlab, nameylab) {
+    `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
+     n <- NULL # Works around the "no visible binding for global variable" note
+     freq <- NULL # Works around the "no visible binding for global variable" note
     strategy.var <- rlang::enquo(strategy.var)
     categ.var <- rlang::enquo(categ.var)
 

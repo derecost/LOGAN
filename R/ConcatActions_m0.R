@@ -22,7 +22,7 @@
 #'
 #' @export
 ConcatActions <- function(data, concat.events) {
-
+    event.type <- NULL # Works around the "no visible binding for global variable" note
     for (i in seq(length(concat.events))) {
         events <- concat.events[[i]]
         if (i == 1) {
