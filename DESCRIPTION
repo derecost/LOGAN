@@ -12,7 +12,7 @@ Description: This package enables users to handle the dataset cleaning for
     educational assessments: the Programme for International Student Assessment
     (PISA) and the Programme for the International Assessment of Adult Competencies
     (PIAAC).
-License: GPL (>= 2)
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Suggests: knitr, rmarkdown
