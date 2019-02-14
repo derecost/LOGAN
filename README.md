@@ -8,7 +8,7 @@ In the spirit of the [open science](https://openscience.com) movement, LOGAN is 
 
 # Usage
 
-In order to use LOGAN, you can install it directly in R or access the Shiny app on your browser. To install the latest version of LOGAN, first make sure you have an up-to-date version of the `devtools` package installed in your machine. Then, run the following command in you R terminal:
+In order to use LOGAN, you can install it directly in R or access the [Shiny app](https://loganpackage.shinyapps.io/shiny/) on your browser. To install the latest version of LOGAN, first make sure you have an up-to-date version of the `devtools` package installed in your machine. Then, run the following command in you R terminal:
 
 ```
 devtools::install_github("derecost/LOGAN")
