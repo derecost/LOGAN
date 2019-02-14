@@ -66,4 +66,5 @@ if (x == 1) {
 
 ## References
 - Google's R Style Guide: https://google.github.io/styleguide/Rguide.xml
-- R Coding Conventions: http://www.maths.lth.se/help/R/RCC/
+- R Style. An Rchaeological Commentary: https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf
+- R packages style guide: http://r-pkgs.had.co.nz/style.html
