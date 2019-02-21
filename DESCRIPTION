@@ -1,6 +1,6 @@
 Package: LOGAN
 Title: Log File Analysis in International Large-scale Assessments
-Version: 0.0.0.9016
+Version: 0.0.0.9022
 Authors@R: c(
     person("Denise", "Reis Costa",
             email = "d.r.costa@cemo.uio.no", role = c("aut", "cre")),
@@ -15,7 +15,6 @@ Description: This package enables users to handle the dataset cleaning for
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 Depends:
     R (>= 2.10)
@@ -25,4 +24,5 @@ Imports:
     psych (>= 1.7.8),
     foreign (>= 0.8-69),
     dplyr, ggplot2, rlang, stringr, magrittr
+Suggests: rmarkdownk, knitr
 RoxygenNote: 6.1.1
