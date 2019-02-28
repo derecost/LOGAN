@@ -18,7 +18,7 @@
 #' @examples
 #' df <- cp025q01.complete
 #' df100 <- head(df, 100)  # for speed
-#' df100_conc <- ConcatActions(df100, df100$CP025Q01.ACTIONS)
+#' df100_conc <- m0$ConcatActions(df100, df100$CP025Q01.ACTIONS)
 #'
 #' @export
 ConcatActions <- function(data, concat.events) {
