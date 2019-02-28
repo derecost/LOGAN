@@ -9,17 +9,22 @@ RangeNumberActionsbyVar(data, id.var, var.group, save.table = TRUE)
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
 
-\item{id.var}{a vector with the individuals identification. It is a \code{quo()} type.}
+\item{id.var}{a vector with the individuals identification. It is a
+\code{quo()} type.}
 
 \item{var.group}{a vector with the group variable. It is a \code{quo()} type.}
 
-\item{save.table}{if \code{TRUE}, will return the table printed}
+\item{save.table}{if \code{TRUE}, will save the table generated as an object
+of class \code{data.frame}. Otherwise, will print the table in pandoc
+format, but the object will not be saved (even if the user assigns it to an object)}
+
+\item{print}{it \code{TRUE}, will print the table generated}
 }
 \value{
-This function returns a \code{data.frame} with the number of students and number de actions (min-max)
-aggregated by a specific variable.
+This function returns a \code{data.frame} with the number of students
+  and number de actions (min-max) aggregated by a specific variable.
 }
 \description{
-This is a function that reports the number of students and number de actions (min-max)
-aggregated by a specific variable.
+This is a function that reports the number of students and number de actions
+(min-max) aggregated by a specific variable.
 }
