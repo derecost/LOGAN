@@ -249,3 +249,4 @@ server <- function(input, output) { #inside the server function will be run once
 }
 
 test_that("Shiny runs", expect_s3_class(shinyApp(ui, server = server), "shiny.appobj"))
+# TODO: add test for observing full dataset
