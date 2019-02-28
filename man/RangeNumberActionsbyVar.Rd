@@ -17,8 +17,6 @@ RangeNumberActionsbyVar(data, id.var, var.group, save.table = TRUE)
 \item{save.table}{if \code{TRUE}, will save the table generated as an object
 of class \code{data.frame}. Otherwise, will print the table in pandoc
 format, but the object will not be saved (even if the user assigns it to an object)}
-
-\item{print}{it \code{TRUE}, will print the table generated}
 }
 \value{
 This function returns a \code{data.frame} with the number of students

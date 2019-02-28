@@ -6,19 +6,19 @@ It is important to notice the correct letter case used in the guidelines below. 
 
 ## File and object naming 
 
-1. Files containing R code should end in `.R`
-2. Function names should have Pascal case, e.g. `FunctionName`
-3. Other object names (function arguments, variables, constants, etc.) should have lowercase names with dots for spaces, e.g. `variable.name`
+1. Files containing R code should end in `.R`.
+2. Function names should have Pascal case, e.g. `FunctionName`.
+3. Other object names (function arguments, variables, constants, etc.) should have lowercase names with dots for spaces, e.g. `variable.name`.
 
 ## Source code formatting
 
-1. Lines of code should have no more than **80 characters** per column. If one line of your code is taking longer than that, it would probably me more readable if it is broken into multiple lines
-2. Indentation should be made with **two spaces**, no tabs
-3. The opening brace should be on the same line; the closing brace should be in its own line
+1. Lines of code should have no more than **80 characters** per column. If one line of your code is taking longer than that, it would probably me more readable if it is broken into multiple lines.
+2. Indentation should be made with **two spaces**, no tabs.
+3. The opening brace should be on the same line; the closing brace should be in its own line.
 
 For example, instead of this:
 
-```
+```{r}
 if (x == 1)
 {
     print(x)
@@ -27,7 +27,7 @@ if (x == 1)
 
 write this:
 
-```
+```{r}
 if (x == 1) {
     print(x)
 }
@@ -35,7 +35,7 @@ if (x == 1) {
 
 The exception is the `else` statement, which should occupy the same line as the closing brace of the previous `if` statement, like this:
 
-```
+```{r}
 if (x == 1) {
     print(x)
 } else {
@@ -43,16 +43,16 @@ if (x == 1) {
 }
 ```
 
-4. Assignments should be made with `<-`, not `=`
-5. Don't use `;` or `attach`
+4. Assignments should be made with `<-`, not `=`.
+5. Don't use `;` or `attach`.
 6. All binary operators (`=`, `==`, `+`, `!=`, `<-`, etc.) must have spaces before and after. There is no space after an opening parenthesis or before a closing parenthesis.
-7. Never place a space before a comma
-8. Always place a space after a comma
+7. Never place a space before a comma.
+8. Always place a space after a comma.
 
 ## Commenting
-1. Inline comments need at least one space before the `#`. All comments need one space after `#`
-2. Any persisting `# TODO:` comment should be written in the `README.md` file under Section `Planned features`
-3. When commenting, remember to favor explaqining the "why", not the "how"
+1. Inline comments need at least one space before the `#`. All comments need one space after `#`.
+2. Any persisting `# TODO:` comment should be written in the `README.md` file under Section `Planned features`.
+3. When commenting, remember to favor explaqining the "why", not the "how".
 
 # git guidelines
 

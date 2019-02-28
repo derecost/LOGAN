@@ -10,7 +10,6 @@
 #' @param save.table if \code{TRUE}, will save the table generated as an object
 #'   of class \code{data.frame}. Otherwise, will print the table in pandoc
 #'   format, but the object will not be saved (even if the user assigns it to an object)
-#' @param print it \code{TRUE}, will print the table generated
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #'
