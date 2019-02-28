@@ -4,7 +4,7 @@ An R package for log file analysis. It can be used as a standalone R package or 
 
 # Licence
 
-In the spirit of the [open science](https://openscience.com) movement, LOGAN is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Contributions to the package are welcome, and we recommend you contact the package creator if you're interested in it. Please read our style guidelines if you intend to contribute with code; the document is available in the package's `inst` directory.
+In the spirit of the [open science](https://openscience.com) movement, LOGAN is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Contributions to the package are welcome, and we recommend you contact the package creator if you're interested in it. Please read our style and git guidelines if you intend to contribute with code; the document is available in the package's `inst` directory.
 
 # Usage
 

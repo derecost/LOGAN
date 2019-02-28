@@ -54,7 +54,18 @@ if (x == 1) {
 2. Any persisting `# TODO:` comment should be written in the `README.md` file under Section `Planned features`
 3. When commenting, remember to favor explaqining the "why", not the "how"
 
-## References
+# git guidelines
+
+In order to avoid unnecessary merging conflicts and keep our work as organized as possible, please follow the instructions below:
+
+1. Do not commit to `master` if the package does not pass all devtools tests---run `devtools::test()` and check if all results fall under the "OK" category---and the output of `devtools::check()` is perfect (i.e., no errors, warnings or notes).
+2. Create one different branch for each new feature you're working on.
+3. Commit and push often, but don't commit unfinished (e.g. broken) code.
+4. Only change the package version on `master`.
+5. Keep your local clone up-to-date as often as possible by pulling from `origin`.
+
+# References
 - Google's R Style Guide: https://google.github.io/styleguide/Rguide.xml
 - R Style. An Rchaeological Commentary: https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf
 - R packages style guide: http://r-pkgs.had.co.nz/style.html
+
