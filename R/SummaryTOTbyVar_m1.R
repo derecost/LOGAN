@@ -1,17 +1,17 @@
 #' Summary of time on task by var
 #'
-#' This is a function that reports the number of students and a summary of time on task
-#' aggregated by a specific variable.
+#' This is a function that reports the number of students and a summary of time
+#' on task aggregated by a specific variable.
 #'
 #' @param data A \code{matrix} or \code{data.frame}
-#' @param tot.var tot.var
-#' @param performance.item a vector with the group variable. It is a \code{quo()} type.
+#' @param tot.var a vector with the time on task.
+#' @param performance.item a vector with the group variable. It is a
+#'   \code{quo()} type.
 #'
-#' @return This function returns a \code{data.frame} with the number of students and number de actions (min-max)
-#' aggregated by a specific variable.
-#'
-#'
-#' @export
+#' @return This function returns a \code{data.frame} with the number of students
+#'   and number de actions (min-max) aggregated by a specific variable.
+#' @examples
+#' m1$SummaryTOTbyVar(cp025q01.complete, "CP025Q01.TOT", "CP025Q01")
 SummaryTOTbyVar <- function(data, tot.var, performance.item) {
 
     #Summary table:

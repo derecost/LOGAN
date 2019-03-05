@@ -13,8 +13,6 @@
 #'   "quo()" type.
 #'
 #' @return This function returns a data frame and a plot
-#'
-#' @export
 DataArcSinebyPerformance <- function(data, strategy.var, performance.test,
                                      country.id) {
         PercentInteraction <- NULL # Works around the "no visible binding for global variable" note

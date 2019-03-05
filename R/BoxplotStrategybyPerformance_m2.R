@@ -5,8 +5,6 @@
 #' @param performance.test performance.test
 #' @param ylab.text ylab.text
 #' @param xlab.text xlab.text
-#'
-#' @export
 BoxplotStrategybyPerformance <- function(data, strategy.var, performance.test,
                                          ylab.text, xlab.text) {
     ggplot2::ggplot(data, ggplot2::aes(x = as.factor(strategy.var),

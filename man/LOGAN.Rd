@@ -13,7 +13,35 @@ This package enables users to handle the dataset cleaning for
   (PIAAC).
 }
 \section{LOGAN functions}{
- The LOGAN functions
+ The LOGAN functions The LOGAN functions are
+  organized in modules, so to call a function you must prefix it with, e.g.,
+  `m0$`, where "m0" is the module to which a certain function pertains.
+
+  What follows is a list of Functions organized per module:
+
+  Module 0:
+  \itemize{
+      \item{CleanActions}{}
+      \item{ConcatActions}{}
+      \item{DataActionsbyID}{}
+      \item{ImportSPSS}{}
+      \item{RangeNumberActionsbyVar}{}
+      \item{TrimVar}{}
+      \item{NumericTimeVar_m1.R}{}
+      \item{PlotTimeonTaskbyVar_m1.R}{}
+      \item{RangeTimeonTaskbyVar_m1.R}{}
+      \item{SummaryTOTbyVar_m1.R}{}
+      \item{TOTVar_m1.R}{}
+      \item{VarTimebyID_m1.R}{}
+      \item{BoxplotStrategybyPerformance_m2.R}{}
+      \item{DataArcSinebyPerformance_m2.R}{}
+      \item{DescriptiveStrategy_m2.R}{}
+      \item{FreqActionsSummary_m2.R}{}
+      \item{PlotStrategybyCatPerformance_m2.R}{}
+      \item{ScatterPlotbyPerformance_m2.R}{}
+      \item{VarActionPosition_m2.R}{}
+      \item{VarActionSearch_m2.R}{}
+  }
 }
 
 \author{

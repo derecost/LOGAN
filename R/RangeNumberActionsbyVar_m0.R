@@ -3,7 +3,7 @@
 #' This is a function that reports the number of students and number de actions
 #' (min-max) aggregated by a specific variable.
 #'
-#' @param  data A \code{matrix} or \code{data.frame}
+#' @param data A \code{matrix} or \code{data.frame}
 #' @param id.var a vector with the individuals identification. It is a
 #'   \code{quo()} type.
 #' @param var.group a vector with the group variable. It is a \code{quo()} type.
@@ -12,6 +12,10 @@
 #'   format, but the object will not be saved (even if the user assigns it to an object)
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
+#' @examples
+#'
+#' m0$RangeNumberActionsbyVar(cp025q01.data, NewID, cnt)  # for storage
+#' m0$RangeNumberActionsbyVar(cp025q01.data, NewID, cnt, save.table = FALSE)  # for printing
 RangeNumberActionsbyVar <- function(data, id.var, var.group, save.table = TRUE) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
     n.event <- NULL # Works around the "no visible binding for global variable" note

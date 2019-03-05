@@ -9,8 +9,6 @@
 #'
 #' @return This function returns a \code{data.frame} with the frequency of each specific events
 #' from the \code{actions.search} argument and "Freq.Actions.Search" summary.
-#'
-#' @export
 VarActionPosition <- function(data, action.var, actions.search) {
 
     for (w in seq(length(actions.search))) {

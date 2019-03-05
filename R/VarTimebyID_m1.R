@@ -1,14 +1,14 @@
 #' Extracting the start or end time
 #'
-#' @param data data
+#' @param data dataset
 #' @param id.var id.var
 #' @param time.var time.var
 #' @param event.var event.var
 #' @param name.var.time name.var.time
-#' @param new.name new.name
-#'
-#' @export
-#'
+#' @param new.name name of the output variable
+#' @examples
+#' m1$VarTimebyID(cp025q01.data, NewID, time, new.event.type, "START_ITEM",
+#'    "CP025Q01.START")
 VarTimebyID <- function(data, id.var, time.var, event.var, name.var.time,
                         new.name) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes

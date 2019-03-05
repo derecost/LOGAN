@@ -1,6 +1,9 @@
 #' Module 0: Data preparation
 #' @name m0
 #' @export
+#' @details This module contains the following functions, which should be called
+#'   by issuing "m0$<function_name>()": CleanActions, ConcatActions,
+#'   DataActionsbyID, ImportSPSS, RangeNumberActionsbyVar, TrimVar
 m0 <- modules::module({
     export("CleanActions", "ConcatActions", "DataActionsbyID", "ImportSPSS",
            "RangeNumberActionsbyVar", "TrimVar")
@@ -15,6 +18,9 @@ m0 <- modules::module({
 #' Module 1: Time
 #' @name m1
 #' @export
+#' @details This module contains the following functions, which should be called
+#'   by issuing "m1$<function_name>()": NumericTimeVar, PlotTimeonTaskbyVar,
+#'   RangeTimeonTaskbyVar, SummaryTOTbyVar, TOTVar, VarTimebyID
 m1 <- modules::module({
     export("NumericTimeVar", "PlotTimeonTaskbyVar", "RangeTimeonTaskbyVar",
            "SummaryTOTbyVar", "TOTVar", "VarTimebyID")
@@ -29,6 +35,11 @@ m1 <- modules::module({
 #' Module 2: Actions (cognitive related)
 #' @name m2
 #' @export
+#' @details This module contains the following functions, which should be called
+#'   by issuing "m2$<function_name>()": BoxplotStrategybyPerformance,
+#'   DataArcSinebyPerformance, DescriptiveStrategy, FreqActionsSummary,
+#'   PlotStrategybyCatPerformance, ScatterPlotbyPerformance, VarActionPosition,
+#'   VarActionSearch
 m2 <- modules::module({
     export("BoxplotStrategybyPerformance", "DataArcSinebyPerformance",
            "DescriptiveStrategy", "FreqActionsSummary",

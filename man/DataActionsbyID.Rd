@@ -22,3 +22,6 @@ identification and a new 'action.var' variable.
 \description{
 This is a function that translates a long to wide format dataset.
 }
+\examples{
+m0$DataActionsbyID(cp025q01.data, NewID, new.event.type, "CP025Q01.ACTIONS")
+}

@@ -6,15 +6,17 @@
 #' @param data A \code{matrix} or \code{data.frame}
 #' @param tot.var a vector with the total time. It is a \code{quo()} type.
 #' @param performance.item performance.item
-#' @param namexlab namexlab
-#' @param nameylab nameylab
+#' @param namexlab name of the plot's x-axis
+#' @param nameylab name of the plot's y-axis. Defaults to "Density"
 #'
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
+#' @examples
 #'
-#'
-#' @export
-PlotTimeonTaskbyVar <- function(data, tot.var, performance.item, namexlab, nameylab) {
+#' m1$PlotTimeonTaskbyVar(cp025q01.complete, "CP025Q01.TOT", "CP025Q01",
+#'                        "Time on task (in minutes)")
+PlotTimeonTaskbyVar <- function(data, tot.var, performance.item, namexlab,
+                                nameylab = "Density") {
 
     data[[performance.item]] <- as.factor(data[[performance.item]])
 

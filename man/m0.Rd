@@ -11,4 +11,9 @@ m0
 \description{
 Module 0: Data preparation
 }
+\details{
+This module contains the following functions, which should be called
+  by issuing "m0$<function_name>()": CleanActions, ConcatActions,
+  DataActionsbyID, ImportSPSS, RangeNumberActionsbyVar, TrimVar
+}
 \keyword{datasets}

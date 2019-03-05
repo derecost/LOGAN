@@ -11,4 +11,9 @@ m1
 \description{
 Module 1: Time
 }
+\details{
+This module contains the following functions, which should be called
+  by issuing "m1$<function_name>()": NumericTimeVar, PlotTimeonTaskbyVar,
+  RangeTimeonTaskbyVar, SummaryTOTbyVar, TOTVar, VarTimebyID
+}
 \keyword{datasets}

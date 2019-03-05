@@ -11,4 +11,11 @@ m2
 \description{
 Module 2: Actions (cognitive related)
 }
+\details{
+This module contains the following functions, which should be called
+  by issuing "m2$<function_name>()": BoxplotStrategybyPerformance,
+  DataArcSinebyPerformance, DescriptiveStrategy, FreqActionsSummary,
+  PlotStrategybyCatPerformance, ScatterPlotbyPerformance, VarActionPosition,
+  VarActionSearch
+}
 \keyword{datasets}

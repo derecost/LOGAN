@@ -12,13 +12,12 @@
 #' @return This function returns a \code{data.frame} with the frequency of each
 #'   specific events from the \code{actions.search} argument and
 #'   "Freq.Actions.Search" summary.
-#' @export
 VarActionSearch <- function(data, action.var, actions.search) {
-
-    for(i in seq(length(actions.search))){
-        if(i==1){
-            data.actionSearch <- stringr::str_count(data[[action.var]],actions.search[i])
-        }else{
+    for (i in seq(length(actions.search))) {
+        if (i == 1) {
+            data.actionSearch <- stringr::str_count(data[[action.var]],
+                                                    actions.search[i])
+        } else {
             data.actionSearch <- cbind(data.actionSearch,
                                        stringr::str_count(data[[action.var]],
                                                           actions.search[i]))
@@ -26,7 +25,6 @@ VarActionSearch <- function(data, action.var, actions.search) {
     }
     data.actionSearch <- as.data.frame(data.actionSearch)
     names(data.actionSearch) <- paste0("freq.", actions.search)
-    #data.actionSearch$Freq.Actions.Search <-  apply(data.actionSearch, 1, sum) #row.sums
     data <- cbind(as.matrix.data.frame(data), data.actionSearch)
     return(data)
 }
