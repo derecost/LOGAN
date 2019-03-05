@@ -14,9 +14,6 @@
 #' @param xlim.vector A numeric vector with the limits of the x-axis in the plot
 #'
 #' @return This function returns a data frame and a plot
-#'
-#'
-#' @export
 ScatterPlotbyPerformance <- function(data, strategy.summary, performance.mean,
                                      country.id, ylab.text, xlab.text,
                                      ylim.vector, xlim.vector) {
