@@ -11,8 +11,6 @@
 #'
 #' @return This function returns a \code{data.frame} with the 'new.event.type'
 #'   variable that cleaned events from the "event.type" variable.
-#'
-#' @export
 CleanActions <- function(data, event.type, clear.events) {
     event.type <- rlang::enquo(event.type)
     data <- dplyr::mutate(data,

@@ -9,11 +9,6 @@
 #' @return This function returns a vector removing trailing and leading spaces
 #' inside the original vector.
 #'
-
-
-
-#'
-#' @export
 TrimVar <- function (data, trim.vector){
     for(i in seq(length(trim.vector))){
         events <- trim.vector[[i]]

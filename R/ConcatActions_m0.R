@@ -19,8 +19,6 @@
 #' df <- cp025q01.complete
 #' df100 <- head(df, 100)  # for speed
 #' df100_conc <- m0$ConcatActions(df100, df100$CP025Q01.ACTIONS)
-#'
-#' @export
 ConcatActions <- function(data, concat.events) {
     event.type <- NULL # Works around the "no visible binding for global variable" note
     for (i in seq(length(concat.events))) {

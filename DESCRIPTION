@@ -1,6 +1,6 @@
 Package: LOGAN
 Title: Log File Analysis in International Large-scale Assessments
-Version: 0.0.0.9024
+Version: 0.0.0.9025
 Authors@R: c(
     person("Denise", "Reis Costa",
             email = "d.r.costa@cemo.uio.no", role = c("aut", "cre")),

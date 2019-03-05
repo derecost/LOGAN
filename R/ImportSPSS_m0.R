@@ -6,9 +6,6 @@
 #' @param filename character string: the name of the file or URL to read.
 #'
 #' @return This function returns a data frame.
-#'
-#'
-#' @export
 ImportSPSS <- function(filename) {
     data <- foreign::read.spss(file=filename, use.value.labels = FALSE,
                                to.data.frame = TRUE, strip.white=TRUE)

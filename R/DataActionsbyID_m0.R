@@ -9,8 +9,6 @@
 #'
 #' @return This function returns a \code{data.frame} with the only one entry by individual
 #' identification and a new 'action.var' variable.
-#'
-#' @export
 DataActionsbyID <- function(data, id.var, event.var, name.var.action) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
     `:=` <- rlang::`:=`  # Placeholder before removal of quasiquotation

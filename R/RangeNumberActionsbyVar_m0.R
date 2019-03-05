@@ -12,8 +12,6 @@
 #'   format, but the object will not be saved (even if the user assigns it to an object)
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
-#'
-#' @export
 RangeNumberActionsbyVar <- function(data, id.var, var.group, save.table = TRUE) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
     n.event <- NULL # Works around the "no visible binding for global variable" note
