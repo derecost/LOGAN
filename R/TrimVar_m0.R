@@ -10,7 +10,8 @@
 #' inside the original vector.
 #' @examples
 #' df <- cp025q01.data
-#' trim.vars <- c("event", "event_type", "top_setting", "central_setting", "bottom_setting", "diag_state")
+#' trim.vars <- c("event", "event_type", "top_setting", "central_setting",
+#'                "bottom_setting", "diag_state")
 #' trimmed.df <- m0$TrimVar(df, trim.vars)
 TrimVar <- function(data, trim.vector) {
     for (i in seq(length(trim.vector))) {

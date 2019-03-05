@@ -26,3 +26,8 @@ This function returns a \code{data.frame} with the number of students
 This is a function that reports the number of students and number de actions
 (min-max) aggregated by a specific variable.
 }
+\examples{
+
+m0$RangeNumberActionsbyVar(cp025q01.data, NewID, cnt)  # for storage
+m0$RangeNumberActionsbyVar(cp025q01.data, NewID, cnt, save.table = FALSE)  # for printing
+}

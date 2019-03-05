@@ -27,20 +27,26 @@ This package enables users to handle the dataset cleaning for
       \item{ImportSPSS}{}
       \item{RangeNumberActionsbyVar}{}
       \item{TrimVar}{}
-      \item{NumericTimeVar_m1.R}{}
-      \item{PlotTimeonTaskbyVar_m1.R}{}
-      \item{RangeTimeonTaskbyVar_m1.R}{}
-      \item{SummaryTOTbyVar_m1.R}{}
-      \item{TOTVar_m1.R}{}
-      \item{VarTimebyID_m1.R}{}
-      \item{BoxplotStrategybyPerformance_m2.R}{}
-      \item{DataArcSinebyPerformance_m2.R}{}
-      \item{DescriptiveStrategy_m2.R}{}
-      \item{FreqActionsSummary_m2.R}{}
-      \item{PlotStrategybyCatPerformance_m2.R}{}
-      \item{ScatterPlotbyPerformance_m2.R}{}
-      \item{VarActionPosition_m2.R}{}
-      \item{VarActionSearch_m2.R}{}
+  }
+  Module 1:
+  \itemize{
+      \item{NumericTimeVar}{}
+      \item{PlotTimeonTaskbyVar}{}
+      \item{RangeTimeonTaskbyVar}{}
+      \item{SummaryTOTbyVar}{}
+      \item{TOTVar}{}
+      \item{VarTimebyID}{}
+  }
+  Module 2:
+  \itemize{
+      \item{BoxplotStrategybyPerformance}{}
+      \item{DataArcSinebyPerformance}{}
+      \item{DescriptiveStrategy}{}
+      \item{FreqActionsSummary}{}
+      \item{PlotStrategybyCatPerformance}{}
+      \item{ScatterPlotbyPerformance}{}
+      \item{VarActionPosition}{}
+      \item{VarActionSearch}{}
   }
 }
 

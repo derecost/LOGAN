@@ -9,19 +9,21 @@ TOTVar(data, starttime.vec, endtime.vec, divBy = NA, tot.var)
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
 
-\item{starttime.vec}{a vector with the individuals identification. It is a \code{quo()} type.}
+\item{starttime.vec}{a vector with the individuals' identifications. It is a
+\code{quo()} type.}
 
-\item{endtime.vec}{a vector with the group variable. It is a \code{quo()} type.}
+\item{endtime.vec}{a vector with the group variable. It is a \code{quo()}
+type.}
 
 \item{divBy}{a vector with the group variable. It is a \code{quo()} type.}
 
 \item{tot.var}{tot.var}
 }
 \value{
-This function returns a \code{data.frame} with the number of students and number de actions (min-max)
-aggregated by a specific variable.
+This function returns a \code{data.frame} with the number of students
+  and number de actions (min-max) aggregated by a specific variable.
 }
 \description{
-This is a function that reports the number of students and a summary of time on task
-aggregated by a specific variable.
+This is a function that reports the number of students and a summary of time
+on task aggregated by a specific variable.
 }

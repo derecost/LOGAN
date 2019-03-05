@@ -4,7 +4,8 @@
 \alias{PlotTimeonTaskbyVar}
 \title{Check response time by var}
 \usage{
-PlotTimeonTaskbyVar(data, tot.var, performance.item, namexlab, nameylab)
+PlotTimeonTaskbyVar(data, tot.var, performance.item, namexlab,
+  nameylab = "Density")
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
@@ -13,9 +14,9 @@ PlotTimeonTaskbyVar(data, tot.var, performance.item, namexlab, nameylab)
 
 \item{performance.item}{performance.item}
 
-\item{namexlab}{namexlab}
+\item{namexlab}{name of the plot's x-axis}
 
-\item{nameylab}{nameylab}
+\item{nameylab}{name of the plot's y-axis. Defaults to "Density"}
 }
 \value{
 This function returns a \code{data.frame} with the number of students
@@ -24,4 +25,9 @@ This function returns a \code{data.frame} with the number of students
 \description{
 This is a function that reports the number of students and number de actions
 (min-max) aggregated by a specific variable.
+}
+\examples{
+
+m1$PlotTimeonTaskbyVar(cp025q01.complete, "CP025Q01.TOT", "CP025Q01",
+                       "Time on task (in minutes)")
 }

@@ -9,7 +9,10 @@
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
 #' df <- cp025q01.complete
-#' identical(NumericTimeVar(cp025q01.complete, "CP025Q01.TOT"), cp025q01.complete)  # What gives?
+#' \dontrun{
+#' identical(m1$NumericTimeVar(cp025q01.complete, "CP025Q01.TOT"),
+#'           cp025q01.complete)  # What gives?
+#' }
 NumericTimeVar <- function(data, vector.time){
 
     for (i in seq(length(vector.time))) {

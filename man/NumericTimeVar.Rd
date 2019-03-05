@@ -9,7 +9,7 @@ NumericTimeVar(data, vector.time)
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
 
-\item{vector.time}{vector.time}
+\item{vector.time}{variable containing the time}
 }
 \value{
 This function returns a \code{data.frame} with the number of students
@@ -17,4 +17,11 @@ This function returns a \code{data.frame} with the number of students
 }
 \description{
 This is a function that transforms a factor var time in numeric.
+}
+\examples{
+df <- cp025q01.complete
+\dontrun{
+identical(m1$NumericTimeVar(cp025q01.complete, "CP025Q01.TOT"),
+          cp025q01.complete)  # What gives?
+}
 }

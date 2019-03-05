@@ -7,7 +7,7 @@
 VarTimebyID(data, id.var, time.var, event.var, name.var.time, new.name)
 }
 \arguments{
-\item{data}{data}
+\item{data}{dataset}
 
 \item{id.var}{id.var}
 
@@ -17,8 +17,12 @@ VarTimebyID(data, id.var, time.var, event.var, name.var.time, new.name)
 
 \item{name.var.time}{name.var.time}
 
-\item{new.name}{new.name}
+\item{new.name}{name of the output variable}
 }
 \description{
 Extracting the start or end time
+}
+\examples{
+m1$VarTimebyID(cp025q01.data, NewID, time, new.event.type, "START_ITEM",
+   "CP025Q01.START")
 }
