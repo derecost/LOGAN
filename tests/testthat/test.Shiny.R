@@ -1,5 +1,7 @@
 context("Shiny application runs successfully")
 library(shiny)
+load("../../data/fullDatasets/cp025q01.complete.rda")
+load("../../data/fullDatasets/cp025q01.data.rda")
 
 ui <- navbarPage(title = "LOGAN",
 
