@@ -8,13 +8,12 @@
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' df <- cp025q01.complete
+#' # df <- cp025q01.complete
 #' \dontrun{
 #' identical(m1$NumericTimeVar(cp025q01.complete, "CP025Q01.TOT"),
 #'           cp025q01.complete)  # What gives?
 #' }
 NumericTimeVar <- function(data, vector.time){
-
     for (i in seq(length(vector.time))) {
         if (class(data[[vector.time[i]]]) == "factor") {
             data[[vector.time[i]]] <- as.numeric(levels(data[[vector.time[i]]]))[data[[vector.time[i]]]]
