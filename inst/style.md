@@ -64,6 +64,10 @@ In order to avoid unnecessary merging conflicts and keep our work as organized a
 4. Only change the package version on `master`. However, changing build version numbers in other branches is useful and allowed to make sure that what you are seeing relates to the latest build. Use it as a last resource, and consider simply discarding the change to the package version before merging back to `master`.
 5. Keep your local clone up-to-date as often as possible by pulling from `origin`.
 
+# General guidelines
+
+- Credit attribution will be given according to `?utils::person`.
+
 # References
 - Google's R Style Guide: https://google.github.io/styleguide/Rguide.xml
 - R Style. An Rchaeological Commentary: https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf
