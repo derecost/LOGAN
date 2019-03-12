@@ -20,8 +20,9 @@ inside the original vector.
 strings of a vector.
 }
 \examples{
-df <- cp025q01.data
-trim.vars <- c("event", "event_type", "top_setting", "central_setting",
-               "bottom_setting", "diag_state")
+df <- cp025q01
+trim.vars <- c("event")
 trimmed.df <- m0$TrimVar(df, trim.vars)
+table(df$event)          # untrimmed
+table(trimmed.df$event)  # extra spaces removed
 }

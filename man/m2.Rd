@@ -4,7 +4,7 @@
 \name{m2}
 \alias{m2}
 \title{Module 2: Actions (cognitive related)}
-\format{An object of class \code{module} (inherits from \code{list}) of length 8.}
+\format{An object of class \code{module} (inherits from \code{list}) of length 4.}
 \usage{
 m2
 }

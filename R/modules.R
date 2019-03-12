@@ -22,11 +22,13 @@ m0 <- modules::module({
 #'   by issuing "m1$<function_name>()": NumericTimeVar, PlotTimeonTaskbyVar,
 #'   RangeTimeonTaskbyVar, SummaryTOTbyVar, TOTVar, VarTimebyID
 m1 <- modules::module({
-    export("NumericTimeVar", "PlotTimeonTaskbyVar", "RangeTimeonTaskbyVar",
-           "SummaryTOTbyVar", "TOTVar", "VarTimebyID")
+    # export("NumericTimeVar", "PlotTimeonTaskbyVar", "RangeTimeonTaskbyVar",
+    #        "SummaryTOTbyVar", "TOTVar", "VarTimebyID")
+    export("NumericTimeVar", "PlotTimeonTaskbyVar", "SummaryTOTbyVar", "TOTVar",
+           "VarTimebyID")
     expose("R/NumericTimeVar_m1.R")
     expose("R/PlotTimeonTaskbyVar_m1.R")
-    expose("R/RangeTimeonTaskbyVar_m1.R")
+    # expose("R/RangeTimeonTaskbyVar_m1.R")
     expose("R/SummaryTOTbyVar_m1.R")
     expose("R/TOTVar_m1.R")
     expose("R/VarTimebyID_m1.R")
@@ -41,16 +43,18 @@ m1 <- modules::module({
 #'   PlotStrategybyCatPerformance, ScatterPlotbyPerformance, VarActionPosition,
 #'   VarActionSearch
 m2 <- modules::module({
-    export("BoxplotStrategybyPerformance", "DataArcSinebyPerformance",
-           "DescriptiveStrategy", "FreqActionsSummary",
-           "PlotStrategybyCatPerformance", "ScatterPlotbyPerformance",
+    # export("BoxplotStrategybyPerformance", "DataArcSinebyPerformance",
+    #        "DescriptiveStrategy", "FreqActionsSummary",
+    #        "PlotStrategybyCatPerformance", "ScatterPlotbyPerformance",
+    #        "VarActionPosition", "VarActionSearch")
+    export("DescriptiveStrategy", "PlotStrategybyCatPerformance",
            "VarActionPosition", "VarActionSearch")
-    expose("R/BoxplotStrategybyPerformance_m2.R")
-    expose("R/DataArcSinebyPerformance_m2.R")
+    # expose("R/BoxplotStrategybyPerformance_m2.R")
+    # expose("R/DataArcSinebyPerformance_m2.R")
     expose("R/DescriptiveStrategy_m2.R")
-    expose("R/FreqActionsSummary_m2.R")
+    # expose("R/FreqActionsSummary_m2.R")
     expose("R/PlotStrategybyCatPerformance_m2.R")
-    expose("R/ScatterPlotbyPerformance_m2.R")
+    # expose("R/ScatterPlotbyPerformance_m2.R")
     expose("R/VarActionPosition_m2.R")
     expose("R/VarActionSearch_m2.R")
 })

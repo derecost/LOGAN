@@ -1,15 +1,18 @@
 #' Frequency of specifics events in a variable of Actions - Summary
 #'
-#' This is a function that locates specific events (using the \code{actions.search}
-#' argument) and create new variables associate with this strategy.
+#' This is a function that locates specific events (using the
+#' \code{actions.search} argument) and create new variables associate with this
+#' strategy.
 #'
-#' @param data A \code{matrix} or \code{data.frame} where the 'action.var' variable is
+#' @param data A \code{matrix} or \code{data.frame} where the 'action.var'
+#'   variable is
 #' @param freqact.var freqact.var
 #' @param var var
-#' @return This function returns a \code{data.frame} with the frequency of each specific events
-#' from the \code{actions.search} argument and "Freq.Actions.Search" summary.
+#' @return This function returns a \code{data.frame} with the frequency of each
+#'   specific events from the \code{actions.search} argument and
+#'   "Freq.Actions.Search" summary.
 FreqActionsSummary <- function(data, freqact.var, var){
-    #Summary table FREQACTIONS by var
+    # Summary table FREQACTIONS by var
     tab.freqitem <- as.data.frame(table(data[, var]))
     for (j in seq(length(tab.freqitem$Var1))) {
         if (j == 1) {
@@ -22,9 +25,7 @@ FreqActionsSummary <- function(data, freqact.var, var){
             tab.perftest <- cbind(tab.perftest,tab.perftest2)
             colnames(tab.perftest)[j] <- paste0(var, "=", as.character(tab.freqitem$Var1[j]))
         }
-
     }
-
     tab.perftest2 <- as.data.frame.matrix(tab.perftest,
                                           row.names = seq(dim(tab.perftest)[1]))
     tot.general <- as.data.frame.matrix(rbind(cbind(summary(data[[freqact.var]])), length(data[[freqact.var]])),
@@ -36,5 +37,4 @@ FreqActionsSummary <- function(data, freqact.var, var){
     names(tab.perftest)[1] <- "Statistics"
     cat(paste0("\n Summary of frequency of actions by ", var ," - Individual level"))
     pander::pandoc.table(tab.perftest,split.tables = 100)
-
 }

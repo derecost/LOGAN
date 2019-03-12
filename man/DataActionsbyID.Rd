@@ -7,21 +7,38 @@
 DataActionsbyID(data, id.var, event.var, name.var.action)
 }
 \arguments{
-\item{data}{A \code{matrix} or \code{data.frame} where the 'event.type' variable is}
+\item{data}{A \code{matrix} or \code{data.frame} where the 'event.type'
+variable is}
 
-\item{id.var}{a vector with the individuals identification. It is a \code{quo()} type.}
+\item{id.var}{a vector with the individuals identification. It is a
+\code{quo()} type.}
 
-\item{event.var}{a vector with the cleaned concatenate events. See \code{CleanActions} function.}
+\item{event.var}{a vector with the cleaned concatenate events. See
+\code{CleanActions} function.}
 
-\item{name.var.action}{A character string that will name the new variable of events}
+\item{name.var.action}{A character string that will name the new variable of
+events}
 }
 \value{
-This function returns a \code{data.frame} with the only one entry by individual
-identification and a new 'action.var' variable.
+This function returns a \code{data.frame} with the only one entry by
+  individual identification and a new 'action.var' variable.
 }
 \description{
 This is a function that translates a long to wide format dataset.
 }
 \examples{
-m0$DataActionsbyID(cp025q01.data, NewID, new.event.type, "CP025Q01.ACTIONS")
+# Basic setup and cleaning
+df <- cp025q01
+df$NewID <- paste0(df$cnt, "-", df$schoolid, "-", df$StIDStd)
+trim.vars <- c("event", "event_type")
+df.trimmed <- m0$TrimVar(df, trim.vars)
+library(rlang)
+concat.events <- c(quo(event), quo(event_type))
+df.conc <- m0$ConcatActions(df.trimmed, concat.events)
+clear.events <- c("ACER_EVENT_" = "", "_NULL" = "")
+df.clean <- m0$CleanActions(df.conc, event_type, clear.events)
+
+# Function demonstration
+m0$DataActionsbyID(df.clean, NewID, new.event.type, "CP025Q01.ACTIONS")
+
 }

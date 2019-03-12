@@ -7,22 +7,40 @@
 VarTimebyID(data, id.var, time.var, event.var, name.var.time, new.name)
 }
 \arguments{
-\item{data}{dataset}
+\item{data}{data frame}
 
-\item{id.var}{id.var}
+\item{id.var}{vector of unique identification}
 
-\item{time.var}{time.var}
+\item{time.var}{vector with the time variable}
 
-\item{event.var}{event.var}
+\item{event.var}{vector with the events}
 
-\item{name.var.time}{name.var.time}
+\item{name.var.time}{name of the time string to filter (ex.: "START_ITEM" or
+"END_ITEM")}
 
 \item{new.name}{name of the output variable}
+}
+\value{
+a data frame with `time` replaced with `new.name`. The variable
+  `event.var` is dropped.
 }
 \description{
 Extracting the start or end time
 }
 \examples{
-m1$VarTimebyID(cp025q01.data, NewID, time, new.event.type, "START_ITEM",
-   "CP025Q01.START")
+# Basic setup and cleaning
+df <- cp025q01
+df$NewID <- paste0(df$cnt, "-", df$schoolid, "-", df$StIDStd)
+trim.vars <- c("event", "event_type", "diag_state")
+df.trimmed <- m0$TrimVar(df, trim.vars)
+library(rlang)
+concat.events <- c(quo(event), quo(event_type))
+df.conc <- m0$ConcatActions(df.trimmed, concat.events)
+clear.events <- c("ACER_EVENT_" = "", "_NULL" = "")
+df.clean <- m0$CleanActions(df.conc, event.type, clear.events)
+
+# Function demonstration
+m1$VarTimebyID(df.clean, NewID, time, new.event.type, "START_ITEM",
+               "CP025Q01.START")
+
 }

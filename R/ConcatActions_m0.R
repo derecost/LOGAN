@@ -16,17 +16,26 @@
 #'   event.type contains the values of concat.events of all the rows.
 #'
 #' @examples
-#' df <- cp025q01.complete
-#' df100 <- head(df, 100)  # for speed
-#' df100_conc <- m0$ConcatActions(df100, df100$CP025Q01.ACTIONS)
+#' # Basic setup and cleaning
+#' df <- cp025q01
+#' vars <- c("event", "event_type")
+#' df.trimmed <- m0$TrimVar(df, vars)
+#'
+#' # Function demonstration
+#' library(rlang)
+#' concat.events <- c(quo(event), quo(event_type))
+#' df.conc <- m0$ConcatActions(df.trimmed, concat.events)
+#' names(df)
+#' names(df.conc)  # notice the extra variable in the end
+#' table(df.conc$event.type)
 ConcatActions <- function(data, concat.events) {
-    event.type <- NULL # Works around the "no visible binding for global variable" note
+    event.type <- NULL # Workaround for "no visible binding for global variable"
     for (i in seq(length(concat.events))) {
         events <- concat.events[[i]]
         if (i == 1) {
             data <- dplyr::mutate(data, event.type = !!events)
         } else {
-            data <- dplyr::mutate(data, event.type = paste0(event.type,"_",
+            data <- dplyr::mutate(data, event.type = paste0(event.type, "_",
                                                             !!events))
         }
     }
