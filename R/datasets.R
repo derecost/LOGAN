@@ -1,11 +1,6 @@
-#' Complete data
+#' Log file for PISA 2015, CP025, Q01
 #'
-#' @name cp025q01.complete
+#' @name cp025q01
 #' @docType data
 NULL
 
-#' Data
-#'
-#' @name cp025q01.data
-#' @docType data
-NULL
