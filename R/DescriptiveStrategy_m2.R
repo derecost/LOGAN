@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' # Data preparation
-#' df <- cp025q01
+#' df <- cp025q01[cp025q01$cnt == "NOR", ]
 #' df$NewID <- paste0(df$cnt, "-", df$schoolid, "-", df$StIDStd)
 #' trim.vars <- c("event", "event_type", "top_setting", "central_setting",
 #'                "bottom_setting", "diag_state")
@@ -51,7 +51,7 @@
 #' df.dataAct$mid <- as.numeric(apply(df.dataAct[, 16:19], 1, sum) > 0)
 #' df.dataAct$votat  <- as.numeric(df.dataAct$top > 0 & df.dataAct$bot > 0 &
 #'                                  df.dataAct$mid > 0)
-#' micro <- pisa
+#' micro <- pisa[pisa$CNT == "NOR", ]
 #' names(df.dataAct)[1:2] <- c("CNT", "SCHOOLID")
 #' df.complete <- dplyr::left_join(df.dataAct, micro,
 #'                                 by = c("CNT", "SCHOOLID", "StIDStd"))

@@ -28,7 +28,7 @@ This is a function that reports the number of students and number of actions
 }
 \examples{
 # Data preparation
-df <- cp025q01
+df <- cp025q01[cp025q01$cnt == "NOR", ]
 df$NewID <- paste0(df$cnt, "-", df$schoolid, "-", df$StIDStd)
 trim.vars <- c("event", "event_type", "top_setting", "central_setting",
                "bottom_setting", "diag_state")
@@ -54,7 +54,7 @@ df.dataAct <- m1$TOTVar(df.timeActions, "CP025Q01.START", "CP025Q01.END",
                         divBy = 60, tot.var = "CP025Q01.TOT")
 df.dataAct <- m2$VarActionSearch(df.timeActions, "CP025Q01.ACTIONS", "apply_1_0_0")
 df.dataAct$top <- as.numeric(apply(df.dataAct["freq.apply_1_0_0"], 1, sum) > 0)
-micro <- pisa
+micro <- pisa[pisa$CNT == "NOR", ]
 names(df.dataAct)[1:2] <- c("CNT", "SCHOOLID")
 df.complete <- dplyr::left_join(df.dataAct, micro,
                                 by = c("CNT", "SCHOOLID", "StIDStd"))
