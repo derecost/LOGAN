@@ -21,7 +21,6 @@ VignetteBuilder: knitr
 Depends:
     R (>= 2.10)
 Imports:
-    tidyverse (>= 1.2.1),
     pander (>= 0.6.1),
     psych (>= 1.7.8),
     foreign (>= 0.8-69),
