@@ -1,4 +1,6 @@
 context("Shiny application runs successfully")
+
+# Setup -------------------------------------------------------------------
 library(shiny)
 load("../../data/fullDatasets/cp025q01.complete.rda")
 load("../../data/fullDatasets/cp025q01.data.rda")
@@ -213,24 +215,24 @@ server <- function(input, output) { #inside the server function will be run once
     #Module 0:
     output$table <- renderDataTable(cp025q01.data[,1:13], options = list(lengthMenu = c(5, 10, 15, 20), pageLength = 5))
     output$nActionsbyVar <- renderPrint({
-        LOGAN::RangeNumberActionsbyVar(data = cp025q01.data[cp025q01.data$cnt == country0(), ],
+        m0$RangeNumberActionsbyVar(data = cp025q01.data[cp025q01.data$cnt == country0(), ],
                                        id.var = NewID, var.group = cnt)
     })
 
     #Module 1:
     output$summaryTime <- renderPrint({
-        LOGAN::SummaryTOTbyVar(data = cp025q01.complete[cp025q01.complete$IDSELECT == country1(), ], tot.var = "CP025Q01.TOT", performance.item = rv$typeAnalysis)
+        m1$SummaryTOTbyVar(data = cp025q01.complete[cp025q01.complete$IDSELECT == country1(), ], tot.var = "CP025Q01.TOT", performance.item = rv$typeAnalysis)
         #summary(cp025q01.complete[cp025q01.complete$IDSELECT == country1(), "CP025Q01.TOT"], na.rm = TRUE)
     })
 
     output$TotbyVar <- renderPlot({
-        PlotTimeonTaskbyVar(data = cp025q01.complete[cp025q01.complete$IDSELECT == country1(), ], tot.var = "CP025Q01.TOT", performance.item = rv$typeAnalysis,
+        m1$PlotTimeonTaskbyVar(data = cp025q01.complete[cp025q01.complete$IDSELECT == country1(), ], tot.var = "CP025Q01.TOT", performance.item = rv$typeAnalysis,
                             namexlab = "Time on task (in minutes)", nameylab = "Density")
     })
 
     #Module 2:
     output$DescriptStrat <- renderPrint({
-        LOGAN::DescriptiveStrategy(data=cp025q01.complete[cp025q01.complete$IDSELECT == country2(), ], strategy.var = strateg2(),
+        m2$DescriptiveStrategy(data=cp025q01.complete[cp025q01.complete$IDSELECT == country2(), ], strategy.var = strateg2(),
                                    performance.item="CP025Q01", performance.test= "PV1CPRO")
     })
 
@@ -244,11 +246,18 @@ server <- function(input, output) { #inside the server function will be run once
         dataplot[,2] <- as.factor(dataplot[,2])
         names(dataplot)[1] <- "VOTAT"
 
-        PlotStrategybyCatPerformance(data = dataplot, strategy.var = VOTAT,
+        m2$PlotStrategybyCatPerformance(data = dataplot, strategy.var = VOTAT,
                                      categ.var = categ, namexlab = "Problem solving - Proficiency levels",
                                      nameylab = "")
     })
 }
 
-test_that("Shiny runs", expect_s3_class(shinyApp(ui, server = server), "shiny.appobj"))
-# TODO: add test for observing full dataset
+# Tests -------------------------------------------------------------------
+test_that("Shiny runs", {
+    shiny.page <- shiny::shinyApp(ui, server)
+    expect_s3_class(shiny.page, "shiny.appobj")
+})
+test_that("Datasets are complete", {
+    expect_equal(dim(cp025q01.data), c(951481, 16))
+    expect_equal(dim(cp025q01.complete), c(60690, 25))
+})

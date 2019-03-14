@@ -88,4 +88,3 @@ PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var,
         ggplot2::xlab(namexlab) +
         ggplot2::ylab(nameylab)
 }
-
