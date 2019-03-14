@@ -7,19 +7,24 @@
 #' @param tot.var a vector with the time on task.
 #' @param performance.item a vector with the group variable. It is a
 #'   \code{quo()} type.
+#' @param na.rm remove missing data in `performance.item`? Default is `FALSE`
 #'
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
 #' m1$SummaryTOTbyVar(cp025q01.complete, "CP025Q01.TOT", "CP025Q01")
 SummaryTOTbyVar <- function(data, tot.var, performance.item) {
+    # Removing NAs
+    if (any(is.na(data[performance.item])) & na.rm) {
+        message("Removing missing data in performance.item")
+        data <- data[!is.na(data[performance.item]), ]
+    }
 
     #Summary table:
     tab.freqitem <- as.data.frame(table(data[, performance.item]))
     for (j in seq(length(tab.freqitem$Var1))) {
         data2 <- as.data.frame(data[data[, performance.item] == as.character(tab.freqitem$Var1[j]), tot.var])
         names(data2) <- tot.var
-
         if (j == 1) {
             tab.perftest <- as.matrix.data.frame(rbind(round(length(data2[[tot.var]]), 0),
                                                        round(min(data2[[tot.var]]), 2) ,
@@ -51,7 +56,6 @@ SummaryTOTbyVar <- function(data, tot.var, performance.item) {
                                               round(stats::sd(data[[tot.var]]), 2),
                                               round(stats::quantile(data[[tot.var]], probs = 0.75),2),
                                               round(max(data[[tot.var]]), 2)))
-
     tab.perftest <- cbind(c("Total N", "Min", "1st.Qu", "Median", "Mean", "SD", "3st.Qu", "Max"), tot.general, tab.perftest)
     colnames(tab.perftest) <- c("Statistics","ToT Total", colnames(tab.perftest)[3:length(colnames(tab.perftest))])
 

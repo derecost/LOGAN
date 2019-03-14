@@ -4,7 +4,7 @@
 \alias{SummaryTOTbyVar}
 \title{Summary of time on task by var}
 \usage{
-SummaryTOTbyVar(data, tot.var, performance.item)
+SummaryTOTbyVar(data, tot.var, performance.item, na.rm = FALSE)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
@@ -13,6 +13,8 @@ SummaryTOTbyVar(data, tot.var, performance.item)
 
 \item{performance.item}{a vector with the group variable. It is a
 \code{quo()} type.}
+
+\item{na.rm}{remove missing data in `performance.item`? Default is `FALSE`}
 }
 \value{
 This function returns a \code{data.frame} with the number of students
