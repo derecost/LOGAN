@@ -17,7 +17,7 @@ type.}
 
 \item{divBy}{a vector with the group variable. It is a \code{quo()} type.}
 
-\item{tot.var}{tot.var}
+\item{tot.var}{string containing the name of the output variable}
 }
 \value{
 This function returns a \code{data.frame} with the number of students

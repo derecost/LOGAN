@@ -9,7 +9,7 @@
 #' @param endtime.vec a vector with the group variable. It is a \code{quo()}
 #'   type.
 #' @param divBy a vector with the group variable. It is a \code{quo()} type.
-#' @param tot.var tot.var
+#' @param tot.var string containing the name of the output variable
 #'
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.

@@ -1,27 +1,70 @@
 #' Report: Descriptive statistics by strategy
 #'
-#' This is a function that reports a descriptive analysis of the strategy and students
-#' performance
+#' This is a function that reports a descriptive analysis of the strategy and
+#' students performance
 #'
-#' @param data A \code{matrix} or \code{data.frame} where the 'strategy.var' and performance
-#' variables are
+#' @param data A \code{matrix} or \code{data.frame} where the 'strategy.var' and
+#'   performance variables are
 #' @param strategy.var A character string with the name of the strategy variable
-#' @param performance.item A character string with the name of the item performance variable
-#' @param performance.test A character string with the name of the test performance variable
-#' @param PartialCredit Logical. It can be used when the item is partial credit score.
+#' @param performance.item A character string with the name of the item
+#'   performance variable
+#' @param performance.test A character string with the name of the test
+#'   performance variable
+#' @param PartialCredit Logical. It can be used when the item is partial credit
+#'   score.
 #'
-#' @return This function returns a report with a descriptive analysis of the strategy and students
-#' performance
+#' @return This function returns a report with a descriptive analysis of the
+#'   strategy and students performance
 #'
 #' @examples
-#' m2$DescriptiveStrategy(data=cp025q01.complete, strategy.var="VOTAT1", performance.item="CP025Q01",
-#' performance.test= "PV1CPRO", PartialCredit=FALSE)
+#' # Data preparation
+#' df <- cp025q01
+#' df$NewID <- paste0(df$cnt, "-", df$schoolid, "-", df$StIDStd)
+#' trim.vars <- c("event", "event_type", "top_setting", "central_setting",
+#'                "bottom_setting", "diag_state")
+#' df.trimmed <- m0$TrimVar(df, trim.vars)
+#' library(rlang)
+#' concat.events <- c(quo(event), quo(event_type), quo(top_setting),
+#'                    quo(central_setting), quo(bottom_setting), quo(diag_state))
+#' df.conc <- m0$ConcatActions(df.trimmed, concat.events)
+#' clear.events <- c("ACER_EVENT_" = "", "_NULL" = "")
+#' df.clean <- m0$CleanActions(df.conc, event.type, clear.events)
+#' time.vars <- c("cnt", "schoolid", "StIDStd", "NewID")
+#' df.start <- m1$VarTimebyID(df.clean, NewID, time, new.event.type,
+#'                            "START_ITEM",
+#'                            "CP025Q01.START")[c(time.vars, "CP025Q01.START")]
+#' df.end   <- m1$VarTimebyID(df.clean, NewID, time, new.event.type,
+#'                            "END_ITEM",
+#'                            "CP025Q01.END")[c(time.vars, "CP025Q01.END")]
+#' df.dataAct <- m0$DataActionsbyID(df.clean, NewID, new.event.type,
+#'                                  "CP025Q01.ACTIONS")[c(time.vars, "CP025Q01.ACTIONS")]
+#' df.time <- dplyr::left_join(df.start, df.end, by = time.vars)
+#' df.timeActions <- dplyr::left_join(df.time, df.dataAct, by = time.vars)
+#' df.dataAct <- m1$TOTVar(df.timeActions, "CP025Q01.START", "CP025Q01.END",
+#'                         divBy = 60, tot.var = "CP025Q01.TOT")
+#' actions <- c("apply_1_0_0", "apply_-1_0_0", "apply_2_0_0", "apply_-2_0_0",
+#'              "apply_0_1_0", "apply_0_-1_0", "apply_0_2_0", "apply_0_-2_0",
+#'               "apply_0_0_1", "apply_0_0_-1", "apply_0_0_2", "apply_0_0_-2")
+#' df.dataAct <- m2$VarActionSearch(df.timeActions, "CP025Q01.ACTIONS", actions)
+#' df.dataAct$top <- as.numeric(apply(df.dataAct[, 8:11], 1, sum) > 0)
+#' df.dataAct$bot <- as.numeric(apply(df.dataAct[, 12:15], 1, sum) > 0)
+#' df.dataAct$mid <- as.numeric(apply(df.dataAct[, 16:19], 1, sum) > 0)
+#' df.dataAct$votat  <- as.numeric(df.dataAct$top > 0 & df.dataAct$bot > 0 &
+#'                                  df.dataAct$mid > 0)
+#' micro <- pisa
+#' names(df.dataAct)[1:2] <- c("CNT", "SCHOOLID")
+#' df.complete <- dplyr::left_join(df.dataAct, micro,
+#'                                 by = c("CNT", "SCHOOLID", "StIDStd"))
+#' df.complete <- df.complete[!is.na(df.complete$CP025Q01), ]
+#' df.complete$CP025Q01 <- as.numeric(df.complete$CP025Q01 == 2)
+#'
+#' # Function Demonstration
+#' m2$DescriptiveStrategy(df.complete, "votat", "CP025Q01", "PV1CPRO")
+#'
 DescriptiveStrategy <- function(data, strategy.var, performance.item,
-                                performance.test, PartialCredit=FALSE) {
-
+                                performance.test, PartialCredit = FALSE) {
     old <- options(warn = 0)
     options(warn = -1)
-
     if (PartialCredit == TRUE) {
         # Frequency table (N): categorical variables with partialCredit: only
         # accepts options: 0, 0.5 and 1
@@ -95,7 +138,8 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
     polychoric.crostab <- psych::polychoric(data[, c(strategy.var, performance.item)])
     xtest.crostab <- stats::chisq.test(crostab.freqvotat)
 
-    cat("Measures of association between",strategy.var,"and",performance.item,"- Individual level")
+    cat("Measures of association between", strategy.var, "and",
+        performance.item, "- Individual level")
     crostab.freqvotat <- rbind(crostab.freqvotat, apply(crostab.freqvotat, 2, sum))
     crostab.freqvotat <- cbind(crostab.freqvotat, apply(crostab.freqvotat, 1, sum))
     crostab.freqvotat <- cbind(row.names(crostab.freqvotat),
@@ -109,7 +153,7 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
     value.p <- ifelse(round(xtest.crostab$p.value,4) < 0.01, "0.01",
                       round(xtest.crostab$p.value,4))
     pander::pandoc.table(crostab.freqvotat,split.tables = 100)
-    cat(paste0("Chi-squared = ",round(xtest.crostab$statistic, ),", df = ",
+    cat(paste0("Chi-squared = ",round(xtest.crostab$statistic, 2),", df = ",
                xtest.crostab$parameter, ", p-value < ", value.p, "\n"))
 
     if (prod(dim(table(data[, c(strategy.var, performance.item)]))) == 4) {

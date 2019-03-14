@@ -9,6 +9,7 @@
 #'
 #' @return This function returns a \code{data.frame} with the number of students and number de actions (min-max)
 #' aggregated by a specific variable.
+#'
 RangeTimeonTaskbyVar <- function(data, tot.var, var.group) {
     tot.var <- rlang::enquo(tot.var)
     var.group <- rlang::enquo(var.group)
