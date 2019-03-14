@@ -16,9 +16,14 @@ devtools::install_github("derecost/LOGAN")
 
 Afterwards, the package can be used after issuing `library(LOGAN)` in R.
 
+LOGAN is organized in modules, so each function must be called as a subset of
+their modules, e.g. `m0$CleanActions()` instead of `CleanActions()`. However, 
+calls to function documentation and examples must be made directly, e.g.
+`?CleanActions` and `example(CleanActions)`.
+
 # Planned features
 
-- Improved documentation (e.g. Wiki)
-- Integration with the modules package
-- Speed improvements (change loops into calls to "*apply")
 - Inclusion in CRAN
+- Improved documentation (e.g. wiki, vignettes)
+- Speed improvements (change loops into calls to "*apply")
+- Reduction of number of package dependencies
