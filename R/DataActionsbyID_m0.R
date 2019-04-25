@@ -15,20 +15,9 @@
 #'   individual identification and a new 'action.var' variable.
 #'
 #' @examples
-#' # Basic setup and cleaning
-#' df <- cp025q01
-#' df$NewID <- paste0(df$cnt, "-", df$schoolid, "-", df$StIDStd)
-#' trim.vars <- c("event", "event_type")
-#' df.trimmed <- m0$TrimVar(df, trim.vars)
-#' library(rlang)
-#' concat.events <- c(quo(event), quo(event_type))
-#' df.conc <- m0$ConcatActions(df.trimmed, concat.events)
-#' clear.events <- c("ACER_EVENT_" = "", "_NULL" = "")
-#' df.clean <- m0$CleanActions(df.conc, event_type, clear.events)
-#'
-#' # Function demonstration
-#' m0$DataActionsbyID(df.clean, NewID, new.event.type, "CP025Q01.ACTIONS")
-#'
+#' \dontrun{
+#'   m0$DataActionsbyID(df.clean, NewID, new.event.type, "CP025Q01.ACTIONS")
+#' }
 DataActionsbyID <- function(data, id.var, event.var, name.var.action) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
     `:=` <- rlang::`:=`  # Placeholder before removal of quasiquotation

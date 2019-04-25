@@ -25,17 +25,7 @@ This function allows you to clean events in the 'event.type'
   variable
 }
 \examples{
-# Basic setup and cleaning
-df <- cp025q01
-vars <- c("event", "event_type")
-df.trimmed <- m0$TrimVar(df, vars)
-library(rlang)
-concat.events <- c(quo(event), quo(event_type))
-df.conc <- m0$ConcatActions(df.trimmed, concat.events)
-clear.events <- c("ACER_EVENT_"="", "_NULL"="")
-
-# Function demonstration
-df.clean <- m0$CleanActions(df.conc, event_type, clear.events)
-table(df.conc$event.type)
-table(df.clean$new.event.type)  # cleaned version
+\dontrun{
+  m0$CleanActions(df.conc, event_type, clear.events)
+}
 }

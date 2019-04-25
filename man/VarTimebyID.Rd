@@ -28,19 +28,8 @@ a data frame with `time` replaced with `new.name`. The variable
 Extracting the start or end time
 }
 \examples{
-# Basic setup and cleaning
-df <- cp025q01
-df$NewID <- paste0(df$cnt, "-", df$schoolid, "-", df$StIDStd)
-trim.vars <- c("event", "event_type", "diag_state")
-df.trimmed <- m0$TrimVar(df, trim.vars)
-library(rlang)
-concat.events <- c(quo(event), quo(event_type))
-df.conc <- m0$ConcatActions(df.trimmed, concat.events)
-clear.events <- c("ACER_EVENT_" = "", "_NULL" = "")
-df.clean <- m0$CleanActions(df.conc, event.type, clear.events)
-
-# Function demonstration
-m1$VarTimebyID(df.clean, NewID, time, new.event.type, "START_ITEM",
-               "CP025Q01.START")
-
+\dontrun{
+  m1$VarTimebyID(df.clean, NewID, time, new.event.type, "START_ITEM",
+                 "CP025Q01.START")
+}
 }
