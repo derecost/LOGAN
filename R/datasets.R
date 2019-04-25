@@ -1,10 +1,10 @@
-#' Log file for PISA 2015, CP025, Q01  (selected countries)
+#' Log file for PISA 2012, CP025, Q01  (selected countries)
 #'
 #' @name cp025q01
 #' @docType data
 NULL
 
-#' Microdata for PISA 2015 (selected countries)
+#' Microdata for PISA 2012 (selected countries)
 #'
 #' @name pisa
 #' @docType data
