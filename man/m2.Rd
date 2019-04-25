@@ -4,7 +4,7 @@
 \name{m2}
 \alias{m2}
 \title{Module 2: Actions (cognitive related)}
-\format{An object of class \code{module} (inherits from \code{list}) of length 4.}
+\format{An object of class \code{module} (inherits from \code{list}) of length 3.}
 \usage{
 m2
 }
@@ -13,9 +13,7 @@ Module 2: Actions (cognitive related)
 }
 \details{
 This module contains the following functions, which should be called
-  by issuing "m2$<function_name>()": BoxplotStrategybyPerformance,
-  DataArcSinebyPerformance, DescriptiveStrategy, FreqActionsSummary,
-  PlotStrategybyCatPerformance, ScatterPlotbyPerformance, VarActionPosition,
-  VarActionSearch
+  by issuing "m2$<function_name>()": DescriptiveStrategy, 
+  PlotStrategybyCatPerformance, VarActionSearch.
 }
 \keyword{datasets}

@@ -20,7 +20,7 @@ m0 <- modules::module({
 #' @export
 #' @details This module contains the following functions, which should be called
 #'   by issuing "m1$<function_name>()": NumericTimeVar, PlotTimeonTaskbyVar,
-#'   RangeTimeonTaskbyVar, SummaryTOTbyVar, TOTVar, VarTimebyID
+#'   SummaryTOTbyVar, TOTVar, VarTimebyID
 m1 <- modules::module({
     # export("NumericTimeVar", "PlotTimeonTaskbyVar", "RangeTimeonTaskbyVar",
     #        "SummaryTOTbyVar", "TOTVar", "VarTimebyID")
@@ -38,23 +38,21 @@ m1 <- modules::module({
 #' @name m2
 #' @export
 #' @details This module contains the following functions, which should be called
-#'   by issuing "m2$<function_name>()": BoxplotStrategybyPerformance,
-#'   DataArcSinebyPerformance, DescriptiveStrategy, FreqActionsSummary,
-#'   PlotStrategybyCatPerformance, ScatterPlotbyPerformance, VarActionPosition,
-#'   VarActionSearch
+#'   by issuing "m2$<function_name>()": DescriptiveStrategy, 
+#'   PlotStrategybyCatPerformance, VarActionSearch.
 m2 <- modules::module({
     # export("BoxplotStrategybyPerformance", "DataArcSinebyPerformance",
     #        "DescriptiveStrategy", "FreqActionsSummary",
     #        "PlotStrategybyCatPerformance", "ScatterPlotbyPerformance",
     #        "VarActionPosition", "VarActionSearch")
     export("DescriptiveStrategy", "PlotStrategybyCatPerformance",
-           "VarActionPosition", "VarActionSearch")
+           "VarActionSearch")
     # expose("R/BoxplotStrategybyPerformance_m2.R")
     # expose("R/DataArcSinebyPerformance_m2.R")
     expose("R/DescriptiveStrategy_m2.R")
     # expose("R/FreqActionsSummary_m2.R")
     expose("R/PlotStrategybyCatPerformance_m2.R")
     # expose("R/ScatterPlotbyPerformance_m2.R")
-    expose("R/VarActionPosition_m2.R")
+    # expose("R/VarActionPosition_m2.R")
     expose("R/VarActionSearch_m2.R")
 })
