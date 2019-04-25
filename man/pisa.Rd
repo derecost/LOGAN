@@ -3,7 +3,7 @@
 \docType{data}
 \name{pisa}
 \alias{pisa}
-\title{Microdata for PISA 2015 (selected countries)}
+\title{Microdata for PISA 2012 (selected countries)}
 \description{
-Microdata for PISA 2015 (selected countries)
+Microdata for PISA 2012 (selected countries)
 }

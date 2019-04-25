@@ -20,9 +20,7 @@ inside the original vector.
 strings of a vector.
 }
 \examples{
-df <- cp025q01
-trim.vars <- c("event")
-trimmed.df <- m0$TrimVar(df, trim.vars)
-table(df$event)          # untrimmed
-table(trimmed.df$event)  # extra spaces removed
+\dontrun{
+  m0$TrimVar(df, "event")
+}
 }

@@ -27,8 +27,7 @@ This is a function that reports the number of students and number de actions
 (min-max) aggregated by a specific variable.
 }
 \examples{
-df <- cp025q01
-df$NewID <- paste0(df$cnt, "-", df$schoolid, "-", df$StIDStd)
-m0$RangeNumberActionsbyVar(df, NewID, cnt)  # for storage
-m0$RangeNumberActionsbyVar(df, NewID, cnt, save.table = FALSE)  # for printing
+\dontrun{
+  m0$RangeNumberActionsbyVar(df, NewID, cnt, save.table = FALSE)
+}
 }
