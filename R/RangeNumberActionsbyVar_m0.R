@@ -13,10 +13,9 @@
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' df <- cp025q01
-#' df$NewID <- paste0(df$cnt, "-", df$schoolid, "-", df$StIDStd)
-#' m0$RangeNumberActionsbyVar(df, NewID, cnt)  # for storage
-#' m0$RangeNumberActionsbyVar(df, NewID, cnt, save.table = FALSE)  # for printing
+#' \dontrun{
+#'   m0$RangeNumberActionsbyVar(df, NewID, cnt, save.table = FALSE)
+#' }
 RangeNumberActionsbyVar <- function(data, id.var, var.group, save.table = TRUE) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
     n.event <- NULL # Works around the "no visible binding for global variable" note
