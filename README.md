@@ -18,7 +18,7 @@ The latest official, stable version of LOGAN is available on [CRAN](https://cran
 install.packages("LOGAN")
 ```
 
-## Development releases
+## Development and past versions
 
 [LOGAN's GitHub repository](https://github.com/derecost/LOGAN/) is the central hub for development of the package. Previous and test versions of LOGAN can be built from there, but they are to be considered unstable and are not guaranteed to work properly. The development team has several coding standards in place to avoid issues at any branch, especially the master one, but unless you know what you are doing, we recommend you stick with the CRAN version of our package.
 
@@ -27,6 +27,8 @@ To install LOGAN from GitHub, first make sure you have an up-to-date version of 
 ```
 devtools::install_github("derecost/LOGAN")
 ```
+
+Alternatively, package releases can be downloaded as compressed files from https://github.com/derecost/LOGAN/releases. These files can be installed in R using the `install.packages()` command with the downloaded file path as argument.
 
 LOGAN is currently under active development, so it is always a good idea to check which version you have just installed. To do so, run `packageVersion("LOGAN")` in R.
 
