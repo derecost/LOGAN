@@ -8,10 +8,9 @@
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' \dontrun{
-#'   vector.time <- c("CP025Q01.END", "CP025Q01.START")
-#'   m1$NumericTimeVar(df.timeActions, vector.time)
-#' }
+#' vector.time <- c("CP025Q01.END", "CP025Q01.START")
+#' m1$NumericTimeVar(cp025q01.treated, vector.time)
+#'
 NumericTimeVar <- function(data, vector.time){
     for (i in seq(length(vector.time))) {
         if (class(data[[vector.time[i]]]) == "factor") {

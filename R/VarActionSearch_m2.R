@@ -14,11 +14,10 @@
 #'   "Freq.Actions.Search" summary.
 #'
 #' @examples
-#' \dontrun{
-#'   df.dataAct <- m2$VarActionSearch(df.timeActions,
-#'                                    "CP025Q01.ACTIONS", #'"1_apply")
-#'   table(df.dataAct$freq.1_apply)
-#' }
+#' # Counting the instances of top_setting == 1
+#' df <- m2$VarActionSearch(cp025q01.treated, "CP025Q01.ACTIONS", "1_apply")
+#' table(df$freq.1_apply)  # checking results
+#'
 VarActionSearch <- function(data, action.var, actions.search) {
     for (i in seq(length(actions.search))) {
         if (i == 1) {
