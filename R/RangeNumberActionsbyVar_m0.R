@@ -37,7 +37,7 @@ RangeNumberActionsbyVar <- function(data, id.var, var.group, save.table = TRUE) 
     if (save.table) {
         return(n.event.var)
     } else {
-        cat("Summary of number of events by country - Individual level\n")
+        message("Summary of number of events by country - Individual level\n")
         pander::pandoc.table(n.event.var,split.tables = 100)
     }
 }

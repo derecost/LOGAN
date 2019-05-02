@@ -88,7 +88,7 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
         ))
 
     colnames(tab.print) <- c("Construct", "Scale","Relat. Freq.", "Frequencies", "Total N")
-    cat("\n Frequency table - Individual level")
+    message("\n Frequency table - Individual level")
     pander::pandoc.table(tab.print,split.tables = 100)
 
     #Chi-squared test of independence
@@ -96,7 +96,7 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
     polychoric.crostab <- psych::polychoric(data[, c(strategy.var, performance.item)])
     xtest.crostab <- stats::chisq.test(crostab.freqvotat)
 
-    cat("Measures of association between", strategy.var, "and",
+    message("Measures of association between", strategy.var, "and",
         performance.item, "- Individual level")
     crostab.freqvotat <- rbind(crostab.freqvotat, apply(crostab.freqvotat, 2, sum))
     crostab.freqvotat <- cbind(crostab.freqvotat, apply(crostab.freqvotat, 1, sum))
@@ -111,12 +111,12 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
     value.p <- ifelse(round(xtest.crostab$p.value,4) < 0.01, "0.01",
                       round(xtest.crostab$p.value,4))
     pander::pandoc.table(crostab.freqvotat,split.tables = 100)
-    cat(paste0("Chi-squared = ",round(xtest.crostab$statistic, 2),", df = ",
+    message(paste0("Chi-squared = ",round(xtest.crostab$statistic, 2),", df = ",
                xtest.crostab$parameter, ", p-value < ", value.p, "\n"))
 
     if (prod(dim(table(data[, c(strategy.var, performance.item)]))) == 4) {
         phi.crostab <- psych::phi(table(data[, c(strategy.var, performance.item)]))
-        cat(paste0("Phi coefficient = ", round(phi.crostab, 4), "\n"))
+        message(paste0("Phi coefficient = ", round(phi.crostab, 4), "\n"))
     }
 
     #Summary table: continua variables - Summary of  PV1CPRO  by strategy
@@ -168,11 +168,11 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
     colnames(tab.perftest) <- c("Statistics", "Total",
                                 colnames(tab.perftest)[3:length(colnames(tab.perftest))])
 
-    cat("\n Summary of",performance.test,"by",strategy.var,"- Individual level")
+    message("\n Summary of",performance.test,"by",strategy.var,"- Individual level")
     pander::pandoc.table(tab.perftest,split.tables = 100)
     polyserial.cor <- psych::polyserial(x = as.matrix(data[, performance.test]),
                                         y = as.matrix(data[, strategy.var]))
-    cat(paste0("Biserial/Polyserial correlation = ",round(polyserial.cor[1],4),"\n"))
+    message(paste0("Biserial/Polyserial correlation = ",round(polyserial.cor[1],4),"\n"))
 
     on.exit(options(old), add = TRUE)
 }

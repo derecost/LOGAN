@@ -22,6 +22,6 @@ RangeTimeonTaskbyVar <- function(data, tot.var, var.group) {
                                     sd.tot = stats::sd(!!tot.var),
                                     median.tot = stats::median(!!tot.var),
                                     max.tot = max(!!tot.var))
-    print(n.event.var, n = 50)
+    message(n.event.var, n = 50)
     return(n.event.var)
 }

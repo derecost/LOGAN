@@ -61,6 +61,6 @@ SummaryTOTbyVar <- function(data, tot.var, performance.item, na.rm = FALSE) {
     tab.perftest <- cbind(c("Total N", "Min", "1st.Qu", "Median", "Mean", "SD", "3st.Qu", "Max"), tot.general, tab.perftest)
     colnames(tab.perftest) <- c("Statistics","ToT Total", colnames(tab.perftest)[3:length(colnames(tab.perftest))])
 
-    cat(paste0("\n Summary of Time on Task by ", performance.item , " - Individual level"))
+    message(paste0("\n Summary of Time on Task by ", performance.item , " - Individual level"))
     pander::pandoc.table(tab.perftest,split.tables = 100)
 }

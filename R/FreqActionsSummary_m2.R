@@ -35,6 +35,6 @@ FreqActionsSummary <- function(data, freqact.var, var){
 
     tab.perftest <- cbind(row.names(tab.perftest), tot.general, tab.perftest2)
     names(tab.perftest)[1] <- "Statistics"
-    cat(paste0("\n Summary of frequency of actions by ", var ," - Individual level"))
+    message(paste0("\n Summary of frequency of actions by ", var ," - Individual level"))
     pander::pandoc.table(tab.perftest,split.tables = 100)
 }
