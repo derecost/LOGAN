@@ -10,10 +10,16 @@
 #' @return a data frame with `time` replaced with `new.name`. The variable
 #'   `event.var` is dropped.
 #' @examples
-#' \dontrun{
-#'   m1$VarTimebyID(df.clean, NewID, time, new.event.type, "START_ITEM",
-#'                  "CP025Q01.START")
-#' }
+#' # Data preparation
+#' df <- cp025q01
+#' df$id <- paste(df[, 1], df[, 2], df[, 3], sep = "-")
+#' df <- m0$TrimVar(df, c("event", "event_type", "diag_state"))
+#' df <- m0$ConcatActions(df, c(rlang::quo(event), rlang::quo(event_type)))
+#' df <- m0$CleanActions(df, event.type, c("ACER_EVENT_" = ""))
+#'
+#' # Function demonstration
+#' m1$VarTimebyID(df, id, time, new.event.type, "START_ITEM", "start")
+#'
 VarTimebyID <- function(data, id.var, time.var, event.var, name.var.time,
                         new.name) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes

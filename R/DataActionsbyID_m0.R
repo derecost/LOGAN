@@ -15,9 +15,16 @@
 #'   individual identification and a new 'action.var' variable.
 #'
 #' @examples
-#' \dontrun{
-#'   m0$DataActionsbyID(df.clean, NewID, new.event.type, "CP025Q01.ACTIONS")
-#' }
+#' # Data preparation
+#' df <- cp025q01
+#' df$id <- paste(df[, 1], df[, 2], df[, 3], sep = "-")
+#' df <- m0$TrimVar(df, c("event", "event_type", "diag_state"))
+#' df <- m0$ConcatActions(df, c(rlang::quo(event), rlang::quo(event_type)))
+#' df <- m0$CleanActions(df, event.type, c("ACER_EVENT_" = ""))
+#'
+#' # Function demonstration
+#' m0$DataActionsbyID(df, id, new.event.type, "actions")
+#'
 DataActionsbyID <- function(data, id.var, event.var, name.var.action) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
     `:=` <- rlang::`:=`  # Placeholder before removal of quasiquotation

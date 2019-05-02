@@ -13,9 +13,17 @@
 #'   variable that cleaned events from the "event.type" variable.
 #'
 #' @examples
-#' \dontrun{
-#'   m0$CleanActions(df.conc, event_type, clear.events)
-#' }
+#' # Data preparation
+#' df <- cp025q01
+#' df$id <- paste(df[, 1], df[, 2], df[, 3], sep = "-")
+#' df <- m0$TrimVar(df, c("event", "event_type", "diag_state"))
+#' df <- m0$ConcatActions(df, c(rlang::quo(event), rlang::quo(event_type)))
+#'
+#' # Function demonstration
+#' df.clean <- m0$CleanActions(df, event_type, c("ACER_EVENT_" = ""))
+#' table(df$event.type)
+#' table(df.clean$new.event.type)  # cleaned version
+#'
 CleanActions <- function(data, event.type, clear.events) {
     event.type <- rlang::enquo(event.type)
     data <- dplyr::mutate(data,

@@ -16,11 +16,17 @@
 #'   event.type contains the values of concat.events of all the rows.
 #'
 #' @examples
-#' \dontrun{
-#'   library(rlang)
-#'   concat.events <- c(quo(event), quo(event_type))
-#'   m0$ConcatActions(df.trimmed, concat.events)
-#' }
+#' # Data preparation
+#' df <- cp025q01
+#' df$id <- paste(df[, 1], df[, 2], df[, 3], sep = "-")
+#' df <- m0$TrimVar(df, c("event", "event_type", "diag_state"))
+#'
+#' # Function demonstration
+#' df.conc <- m0$ConcatActions(df, c(rlang::quo(event), rlang::quo(event_type)))
+#' names(df)
+#' names(df.conc)  # notice the extra variable in the end
+#' table(df.conc$event.type)
+#'
 ConcatActions <- function(data, concat.events) {
     event.type <- NULL # Workaround for "no visible binding for global variable"
     for (i in seq(length(concat.events))) {
