@@ -12,9 +12,8 @@
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' \dontrun{
-#'   m1$SummaryTOTbyVar(df.complete, "CP025Q01.TOT", "CP025Q01", TRUE)
-#' }
+#' m1$SummaryTOTbyVar(cp025q01.treated, "CP025Q01.TOT", "CP025Q01", TRUE)
+#' 
 
 SummaryTOTbyVar <- function(data, tot.var, performance.item, na.rm = FALSE) {
     # Removing NAs

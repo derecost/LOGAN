@@ -12,10 +12,17 @@
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' \dontrun{
-#'   m2$PlotStrategybyCatPerformance(df.dataplot, top, categ,
-#'                                   "Proficiency levels", "Percentage")
-#' }
+#' # Data preparation
+#' df <- cp025q01.treated
+#' df$categ <- cut(df$PV1CPRO, c(0, 423, 488, 553, 900))
+#' df.dataplot <- df[, c("top", "categ")]
+#' df.dataplot[,1] <- as.factor(df.dataplot[,1])
+#' df.dataplot[,2] <- as.factor(df.dataplot[,2])
+#'
+#' # Function demonstration
+#' m2$PlotStrategybyCatPerformance(df.dataplot, top, categ,
+#'                                  "Proficiency levels", "Percentage")
+#'
 PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var,
                                          namexlab, nameylab) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes

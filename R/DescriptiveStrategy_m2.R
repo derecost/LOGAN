@@ -17,9 +17,8 @@
 #'   strategy and students performance
 #'
 #' @examples
-#' \dontrun{
-#'   m2$DescriptiveStrategy(df.complete, "votat", "CP025Q01", "PV1CPRO")
-#' }
+#' m2$DescriptiveStrategy(cp025q01.treated, "votat", "CP025Q01", "PV1CPRO")
+#'
 DescriptiveStrategy <- function(data, strategy.var, performance.item,
                                 performance.test, PartialCredit = FALSE) {
     old <- options(warn = 0)

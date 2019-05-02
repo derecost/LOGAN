@@ -12,10 +12,9 @@
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' \dontrun{
-#'   m1$PlotTimeonTaskbyVar(df.complete, "CP025Q01.TOT", "CP025Q01",
-#'                          namexlab = "Time on task (minutes)")
-#' }
+#' m1$PlotTimeonTaskbyVar(cp025q01.treated, "CP025Q01.TOT", "CP025Q01",
+#'                        namexlab = "Time on task (minutes)")
+#'
 PlotTimeonTaskbyVar <- function(data, tot.var, performance.item, namexlab,
                                 nameylab = "Density") {
 
