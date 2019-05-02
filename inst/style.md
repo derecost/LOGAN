@@ -67,9 +67,10 @@ In order to avoid unnecessary merging conflicts and keep our work as organized a
 # General guidelines
 
 - Credit attribution will be given according to `?utils::person`.
+- Version numbers should follow [Semantic Versioning 2.0.0](https://semver.org/) guidelines, using only numbers separated by periods. Version number appendices like "-beta" are highly discouraged, since they can easily disrupt workflow. When submitting versions to external repositories for approval (e.g., CRAN), the version number stated in the DESCRIPTION file should be fixed. However, for internal control, tags can be created for each release candidate, i.e., for each submission related to the same software version. For example, all attempts of releasing LOGAN 1.0.0 on CRAN had "1.0.0" as the version number in the DESCRIPTION file, but tags were created on git as "1.0.0-rc1", "1.0.0-rc2", etc., to mark the commits that were actually sent to CRAN on each attempt.
 
 # References
 - Google's R Style Guide: https://google.github.io/styleguide/Rguide.xml
 - R Style. An Rchaeological Commentary: https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf
 - R packages style guide: http://r-pkgs.had.co.nz/style.html
-
+- Semantic versioning: https://semver.org/
