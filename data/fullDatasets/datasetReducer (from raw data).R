@@ -43,7 +43,7 @@ df.dataAct <- m1$TOTVar(df.timeActions, "CP025Q01.START", "CP025Q01.END",
 actions <- c("apply_1_0_0", "apply_-1_0_0", "apply_2_0_0", "apply_-2_0_0",
              "apply_0_1_0", "apply_0_-1_0", "apply_0_2_0", "apply_0_-2_0",
               "apply_0_0_1", "apply_0_0_-1", "apply_0_0_2", "apply_0_0_-2")
-df.dataAct <- m2$VarActionSearch(df.dataAct, "CP025Q01.ACTIONS", actions)  # changed from df.timeActions
+df.dataAct <- m2$VarActionSearch(df.dataAct, "CP025Q01.ACTIONS", actions)
 df.dataAct <- m1$NumericTimeVar(df.dataAct, "CP025Q01.TOT")
 df.dataAct$top <- as.numeric(apply(df.dataAct[, 8:11], 1, sum) > 0)
 df.dataAct$bot <- as.numeric(apply(df.dataAct[, 12:15], 1, sum) > 0)
