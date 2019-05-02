@@ -5,8 +5,8 @@ Date: 2019-04-25
 Description: Enables users to handle the dataset cleaning for
     conducting specific analyses with the log files from two international
     educational assessments: the Programme for International Student Assessment
-    (PISA) and the Programme for the International Assessment of Adult Competencies
-    (PIAAC).
+    (PISA, <http://www.oecd.org/pisa/>) and the Programme for the International Assessment of Adult Competencies
+    (PIAAC, <http://www.oecd.org/skills/piaac/>).
 Authors@R: c(
     person("Denise", "Reis Costa",
             email = "d.r.costa@cemo.uio.no", role = c("aut", "cre")),
