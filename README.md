@@ -8,7 +8,7 @@ In the spirit of the [open science](https://openscience.com) movement, LOGAN is 
 
 # Installation
 
-In order to use LOGAN, you can install it directly in R or access the [Shiny app](https://loganpackage.shinyapps.io/shiny/) on your browser.
+In order to use LOGAN, you can install it directly in R. An illustration of the analyses can be found on the [Shiny app](https://loganpackage.shinyapps.io/shiny/) on your browser.
 
 ## Official release
 
