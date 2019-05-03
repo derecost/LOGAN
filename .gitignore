@@ -43,3 +43,6 @@ rsconnect/
 .Rproj.user
 
 man/
+
+# Paper-sensitive files
+data/fullDatasets/*.R
