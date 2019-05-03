@@ -9,9 +9,8 @@
 #' @return This function returns a vector removing trailing and leading spaces
 #' inside the original vector.
 #' @examples
-#' \dontrun{
-#'   m0$TrimVar(df, "event")
-#' }
+#' head(m0$TrimVar(cp025q01, "event"))
+#' 
 TrimVar <- function(data, trim.vector) {
     for (i in seq(length(trim.vector))) {
         events <- trim.vector[[i]]
