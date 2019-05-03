@@ -26,20 +26,14 @@
 #'   \itemize{
 #'       \item{NumericTimeVar}{}
 #'       \item{PlotTimeonTaskbyVar}{}
-#'       \item{RangeTimeonTaskbyVar}{}
 #'       \item{SummaryTOTbyVar}{}
 #'       \item{TOTVar}{}
 #'       \item{VarTimebyID}{}
 #'   }
 #'   Module 2:
 #'   \itemize{
-#'       \item{BoxplotStrategybyPerformance}{}
-#'       \item{DataArcSinebyPerformance}{}
 #'       \item{DescriptiveStrategy}{}
-#'       \item{FreqActionsSummary}{}
 #'       \item{PlotStrategybyCatPerformance}{}
-#'       \item{ScatterPlotbyPerformance}{}
-#'       \item{VarActionPosition}{}
 #'       \item{VarActionSearch}{}
 #'   }
 #' @docType package
