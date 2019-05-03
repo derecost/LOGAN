@@ -96,8 +96,8 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
     polychoric.crostab <- psych::polychoric(data[, c(strategy.var, performance.item)])
     xtest.crostab <- stats::chisq.test(crostab.freqvotat)
 
-    message("Measures of association between", strategy.var, "and",
-        performance.item, "- Individual level")
+    message("Measures of association between ", strategy.var, " and ",
+        performance.item, " - Individual level")
     crostab.freqvotat <- rbind(crostab.freqvotat, apply(crostab.freqvotat, 2, sum))
     crostab.freqvotat <- cbind(crostab.freqvotat, apply(crostab.freqvotat, 1, sum))
     crostab.freqvotat <- cbind(row.names(crostab.freqvotat),
@@ -163,16 +163,19 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
                                                                     probs = 0.75),2),
                                               round(max(data[[performance.test]]), 2)))
 
-    tab.perftest <- cbind(c("Total N", "Min", "1st.Qu", "Median", "Mean", "SD", "3st.Qu", "Max"),
+    tab.perftest <- cbind(c("Total N", "Min", "1st.Qu", "Median",
+                            "Mean", "SD", "3st.Qu", "Max"),
                           tot.general, tab.perftest)
     colnames(tab.perftest) <- c("Statistics", "Total",
                                 colnames(tab.perftest)[3:length(colnames(tab.perftest))])
 
-    message("\n Summary of",performance.test,"by",strategy.var,"- Individual level")
-    pander::pandoc.table(tab.perftest,split.tables = 100)
+    message("\n Summary of ", performance.test, " by ", strategy.var,
+            " - Individual level")
+    pander::pandoc.table(tab.perftest, split.tables = 100)
     polyserial.cor <- psych::polyserial(x = as.matrix(data[, performance.test]),
                                         y = as.matrix(data[, strategy.var]))
-    message(paste0("Biserial/Polyserial correlation = ",round(polyserial.cor[1],4),"\n"))
+    message(paste0("Biserial/Polyserial correlation = ",
+                   round(polyserial.cor[1], 4), "\n"))
 
     on.exit(options(old), add = TRUE)
 }
