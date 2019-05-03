@@ -27,7 +27,6 @@ This is a function that reports the number of students and number de actions
 (min-max) aggregated by a specific variable.
 }
 \examples{
-\dontrun{
-  m0$RangeNumberActionsbyVar(df, NewID, cnt, save.table = FALSE)
-}
+m0$RangeNumberActionsbyVar(cp025q01.treated, NewID, CNT, save.table = FALSE)
+
 }

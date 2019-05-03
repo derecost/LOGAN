@@ -20,7 +20,6 @@ inside the original vector.
 strings of a vector.
 }
 \examples{
-\dontrun{
-  m0$TrimVar(df, "event")
-}
+head(m0$TrimVar(cp025q01, "event"))
+
 }
