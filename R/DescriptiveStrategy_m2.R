@@ -91,7 +91,6 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
 
     #Chi-squared test of independence
     crostab.freqvotat <- table(data[, c(strategy.var, performance.item)])
-    polychoric.crostab <- psych::polychoric(data[, c(strategy.var, performance.item)])
     xtest.crostab <- stats::chisq.test(crostab.freqvotat)
 
     message("Measures of association between ", strategy.var, " and ",
