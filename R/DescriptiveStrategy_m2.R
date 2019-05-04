@@ -21,8 +21,6 @@
 #'
 DescriptiveStrategy <- function(data, strategy.var, performance.item,
                                 performance.test, PartialCredit = FALSE) {
-    old <- options(warn = 0)
-    options(warn = -1)
     if (PartialCredit == TRUE) {
         # Frequency table (N): categorical variables with partialCredit: only
         # accepts options: 0, 0.5 and 1
@@ -176,6 +174,4 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
                                         y = as.matrix(data[, strategy.var]))
     message(paste0("Biserial/Polyserial correlation = ",
                    round(polyserial.cor[1], 4), "\n"))
-
-    on.exit(options(old), add = TRUE)
 }
