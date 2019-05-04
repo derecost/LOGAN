@@ -63,4 +63,5 @@ SummaryTOTbyVar <- function(data, tot.var, performance.item, na.rm = FALSE) {
 
     message(paste0("\n Summary of Time on Task by ", performance.item , " - Individual level"))
     pander::pandoc.table(tab.perftest,split.tables = 100)
+    return(as.data.frame(tab.perftest))
 }
