@@ -1,6 +1,6 @@
 Package: LOGAN
 Title: Log File Analysis in International Large-Scale Assessments
-Version: 1.0.1.9001
+Version: 1.0.1.9002
 Date: 2019-05-04
 Description: Enables users to handle the dataset cleaning for
     conducting specific analyses with the log files from two international

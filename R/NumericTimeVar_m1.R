@@ -17,11 +17,12 @@
 #' df <- m1$NumericTimeVar(df, "CP025Q01.START")
 #' class(df$CP025Q01.START)
 #' 
-NumericTimeVar <- function(data, vector.time){
-    for (i in seq(length(vector.time))) {
-        if (class(data[[vector.time[i]]]) == "factor") {
-            data[[vector.time[i]]] <- as.numeric(levels(data[[vector.time[i]]]))[data[[vector.time[i]]]]
-        }
+NumericTimeVar <- function(data, vector.time) {
+    time <- data[[vector.time]]
+    if (class(time) == "factor") {
+         data[[vector.time]] <- as.numeric(levels(time))[time]
+    } else {
+        stop("Variable is not a factor")
     }
     return(data)
 }
