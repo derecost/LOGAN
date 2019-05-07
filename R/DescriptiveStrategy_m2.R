@@ -14,7 +14,7 @@
 #'   score.
 #'
 #' @return This function returns a report with a descriptive analysis of the
-#'   strategy and students performance
+#'   strategy and students performance.
 #'
 #' @examples
 #' m2$DescriptiveStrategy(cp025q01.treated, "votat", "CP025Q01", "PV1CPRO")
