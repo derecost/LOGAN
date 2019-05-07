@@ -8,21 +8,21 @@
 #'   \code{quo()} type.
 #' @param endtime.vec a vector with the group variable. It is a \code{quo()}
 #'   type.
-#' @param divBy a vector with the group variable. It is a \code{quo()} type.
+#' @param div.by a vector with the group variable. It is a \code{quo()} type.
 #' @param tot.var string containing the name of the output variable
 #'
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' m1$TOTVar(cp025q01.treated, "CP025Q01.START", "CP025Q01.END", divBy = 60,
+#' m1$TOTVar(cp025q01.treated, "CP025Q01.START", "CP025Q01.END", div.by = 60,
 #'           tot.var = "CP025Q01.TOT")
 #'
-TOTVar <- function(data, starttime.vec, endtime.vec, divBy = NA, tot.var) {
+TOTVar <- function(data, starttime.vec, endtime.vec, div.by = NA, tot.var) {
     for (i in seq(length(starttime.vec))) {
-        if (is.na(divBy)) {
+        if (is.na(div.by)) {
             data$TOT <- data[[endtime.vec[i]]] - data[[starttime.vec[i]]]
         } else{
-            data$TOT <- (data[[endtime.vec[i]]] - data[[starttime.vec[i]]]) / divBy
+            data$TOT <- (data[[endtime.vec[i]]] - data[[starttime.vec[i]]]) / div.by
         }
         names(data)[length(data)] <- tot.var
     }
