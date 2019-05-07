@@ -4,7 +4,7 @@
 \alias{TOTVar}
 \title{Time on task variable}
 \usage{
-TOTVar(data, starttime.vec, endtime.vec, div.by = NA, tot.var)
+TOTVar(data, starttime.vec, endtime.vec, div.by = 1, tot.var)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
