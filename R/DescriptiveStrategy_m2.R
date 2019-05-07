@@ -10,7 +10,7 @@
 #'   performance variable
 #' @param performance.test A character string with the name of the test
 #'   performance variable
-#' @param PartialCredit Logical. It can be used when the item is partial credit
+#' @param partial.credit Logical. It can be used when the item is partial credit
 #'   score.
 #'
 #' @return This function returns a report with a descriptive analysis of the
