@@ -15,7 +15,7 @@
 #' m1$PlotTimeonTaskbyVar(cp025q01.treated, "CP025Q01.TOT", "CP025Q01",
 #'                        namexlab = "Time on task (minutes)")
 #'
-PlotTimeonTaskbyVar <- function(data, tot.var, performance.item, namexlab,
+PlotTimeonTaskbyVar <- function(data, tot.var, performance.item, namexlab = "",
                                 nameylab = "Density") {
 
     data[[performance.item]] <- as.factor(data[[performance.item]])
