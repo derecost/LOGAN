@@ -46,6 +46,7 @@ calls to function documentation and examples must be made directly, e.g.
 - Improved documentation (e.g. wiki, vignettes)
 - Speed improvements (change loops into calls to "*apply", remove unnecessary statements, etc.)
 - Reduction in the number of package dependencies
+- Improved validation of function input
 
 # Reporting bugs and requesting features
 
