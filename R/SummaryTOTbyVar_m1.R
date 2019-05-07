@@ -8,14 +8,18 @@
 #' @param performance.item a vector with the group variable. It is a
 #'   \code{quo()} type.
 #' @param na.rm remove missing data in `performance.item`? Default is `FALSE`
+#' @param save.table if \code{TRUE}, will save the table generated as an object
+#'   of class \code{data.frame}. Otherwise, will print the table in pandoc
+#'   format, but the object will not be saved (even if the user assigns it to 
+#'   an object)
 #'
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' m1$SummaryTOTbyVar(cp025q01.treated, "CP025Q01.TOT", "CP025Q01", TRUE)
+#' m1$SummaryTOTbyVar(cp025q01.treated, "CP025Q01.TOT", "CP025Q01")
 #' 
 
-SummaryTOTbyVar <- function(data, tot.var, performance.item, na.rm = FALSE) {
+SummaryTOTbyVar <- function(data, tot.var, performance.item, na.rm = FALSE, save.table = TRUE) {
     # Removing NAs
     if (any(is.na(data[performance.item])) & na.rm) {
         message("Removing missing data in performance.item")
@@ -61,7 +65,11 @@ SummaryTOTbyVar <- function(data, tot.var, performance.item, na.rm = FALSE) {
     tab.perftest <- cbind(c("Total N", "Min", "1st.Qu", "Median", "Mean", "SD", "3st.Qu", "Max"), tot.general, tab.perftest)
     colnames(tab.perftest) <- c("Statistics","ToT Total", colnames(tab.perftest)[3:length(colnames(tab.perftest))])
 
-    message(paste0("\n Summary of Time on Task by ", performance.item , " - Individual level"))
-    pander::pandoc.table(tab.perftest,split.tables = 100)
-    return(as.data.frame(tab.perftest))
+    if (save.table) {
+        return(as.data.frame(tab.perftest))
+    } else {
+        message(paste0("\n Summary of Time on Task by ", performance.item ,
+                       " - Individual level"))
+        pander::pandoc.table(tab.perftest,split.tables = 100)
+    }
 }
