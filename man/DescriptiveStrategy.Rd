@@ -24,7 +24,7 @@ score.}
 }
 \value{
 This function returns a report with a descriptive analysis of the
-  strategy and students performance
+  strategy and students performance.
 }
 \description{
 This is a function that reports a descriptive analysis of the strategy and
