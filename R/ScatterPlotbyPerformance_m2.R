@@ -15,7 +15,7 @@
 #'
 #' @return This function returns a data frame and a plot
 ScatterPlotbyPerformance <- function(data, strategy.summary, performance.mean,
-                                     country.id, ylab.text, xlab.text,
+                                     country.id, ylab.text = "", xlab.text = "",
                                      ylim.vector, xlim.vector) {
 
     graphics::plot(data[[strategy.summary]], data[[performance.mean]],

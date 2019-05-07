@@ -24,7 +24,7 @@
 #'                                  "Proficiency levels", "Percentage")
 #'
 PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var,
-                                         namexlab, nameylab) {
+                                         namexlab = "", nameylab = "") {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
      n <- NULL # Works around the "no visible binding for global variable" note
      freq <- NULL # Works around the "no visible binding for global variable" note
