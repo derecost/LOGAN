@@ -17,15 +17,9 @@
 #' m1$TOTVar(cp025q01.treated, "CP025Q01.START", "CP025Q01.END", div.by = 60,
 #'           tot.var = "CP025Q01.TOT")
 #'
-TOTVar <- function(data, starttime.vec, endtime.vec, divBy = 1, tot.var) {
-TOTVar <- function(data, starttime.vec, endtime.vec, div.by = NA, tot.var) {
+TOTVar <- function(data, starttime.vec, endtime.vec, div.by = 1, tot.var) {
     for (i in seq(length(starttime.vec))) {
-        data$TOT <- data[[endtime.vec[i]]] - data[[starttime.vec[i]]] / divBy
-        if (is.na(div.by)) {
-            data$TOT <- data[[endtime.vec[i]]] - data[[starttime.vec[i]]]
-        } else{
-            data$TOT <- (data[[endtime.vec[i]]] - data[[starttime.vec[i]]]) / div.by
-        }
+        data$TOT <- data[[endtime.vec[i]]] - data[[starttime.vec[i]]] / div.by
         names(data)[length(data)] <- tot.var
     }
     return(data)
