@@ -19,7 +19,8 @@
 #' m1$SummaryTOTbyVar(cp025q01.treated, "CP025Q01.TOT", "CP025Q01")
 #' 
 
-SummaryTOTbyVar <- function(data, tot.var, performance.item, na.rm = FALSE, save.table = TRUE) {
+SummaryTOTbyVar <- function(data, tot.var, performance.item, na.rm = FALSE,
+                            save.table = TRUE) {
     # Removing NAs
     if (any(is.na(data[performance.item])) & na.rm) {
         message("Removing missing data in performance.item")
