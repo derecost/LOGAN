@@ -185,6 +185,9 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
             phi.crosstab <- psych::phi(table(data[, c(strategy.var,
                                                      performance.item)]))
         }
+        # Converting tab.perftest to data frame
+        tab.perftest_df <- data.frame(apply(tab.perftest[, -1], 2, as.numeric),
+                                      row.names = tab.perftest[, 1])
         out <- list(frequency_table = tab.print,
                     frequency_votat = crostab.freqvotat,
                     chi_square = xtest.crostab,
