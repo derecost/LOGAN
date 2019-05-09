@@ -4,7 +4,8 @@
 \alias{SummaryTOTbyVar}
 \title{Summary of time on task by var}
 \usage{
-SummaryTOTbyVar(data, tot.var, performance.item, na.rm = FALSE)
+SummaryTOTbyVar(data, tot.var, performance.item, na.rm = FALSE,
+  save.table = TRUE)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
@@ -15,6 +16,11 @@ SummaryTOTbyVar(data, tot.var, performance.item, na.rm = FALSE)
 \code{quo()} type.}
 
 \item{na.rm}{remove missing data in `performance.item`? Default is `FALSE`}
+
+\item{save.table}{if \code{TRUE}, will save the table generated as an object
+of class \code{data.frame}. Otherwise, will print the table in pandoc
+format, but the object will not be saved (even if the user assigns it to 
+an object)}
 }
 \value{
 This function returns a \code{data.frame} with the number of students
@@ -25,6 +31,6 @@ This is a function that reports the number of students and a summary of time
 on task aggregated by a specific variable.
 }
 \examples{
-m1$SummaryTOTbyVar(cp025q01.treated, "CP025Q01.TOT", "CP025Q01", TRUE)
+m1$SummaryTOTbyVar(cp025q01.treated, "CP025Q01.TOT", "CP025Q01")
 
 }

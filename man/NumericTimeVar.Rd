@@ -19,7 +19,13 @@ This function returns a \code{data.frame} with the number of students
 This is a function that transforms a factor var time in numeric.
 }
 \examples{
-vector.time <- c("CP025Q01.END", "CP025Q01.START")
-m1$NumericTimeVar(cp025q01.treated, vector.time)
+# Untreating variable
+df <- cp025q01.treated
+df$CP025Q01.START <- as.factor(df$CP025Q01.START)
+class(df$CP025Q01.START)
+
+# Retreating variable
+df <- m1$NumericTimeVar(df, "CP025Q01.START")
+class(df$CP025Q01.START)
 
 }

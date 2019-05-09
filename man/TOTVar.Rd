@@ -28,7 +28,8 @@ This is a function that reports the number of students and a summary of time
 on task aggregated by a specific variable.
 }
 \examples{
-m1$TOTVar(cp025q01.treated, "CP025Q01.START", "CP025Q01.END", divBy = 60,
-          tot.var = "CP025Q01.TOT")
+df <- m1$TOTVar(cp025q01.treated, "CP025Q01.START", "CP025Q01.END",
+                divBy = 60, tot.var = "CP025Q01.TOT")
+str(df)
 
 }

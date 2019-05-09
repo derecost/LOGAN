@@ -8,14 +8,21 @@
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' vector.time <- c("CP025Q01.END", "CP025Q01.START")
-#' m1$NumericTimeVar(cp025q01.treated, vector.time)
-#'
-NumericTimeVar <- function(data, vector.time){
-    for (i in seq(length(vector.time))) {
-        if (class(data[[vector.time[i]]]) == "factor") {
-            data[[vector.time[i]]] <- as.numeric(levels(data[[vector.time[i]]]))[data[[vector.time[i]]]]
-        }
+#' # Untreating variable
+#' df <- cp025q01.treated
+#' df$CP025Q01.START <- as.factor(df$CP025Q01.START)
+#' class(df$CP025Q01.START)
+#' 
+#' # Retreating variable
+#' df <- m1$NumericTimeVar(df, "CP025Q01.START")
+#' class(df$CP025Q01.START)
+#' 
+NumericTimeVar <- function(data, vector.time) {
+    time <- data[[vector.time]]
+    if (class(time) == "factor") {
+         data[[vector.time]] <- as.numeric(levels(time))[time]
+    } else {
+        stop("Variable is not a factor")
     }
     return(data)
 }
