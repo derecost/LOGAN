@@ -1,3 +1,6 @@
+![](https://www.r-pkg.org/badges/version/LOGAN)
+![](https://cranlogs.r-pkg.org/badges/grand-total/LOGAN)
+
 # LOGAN
 
 An R package for log file analysis. It can be used as a standalone R package or as a backend for the accompanying Shiny application.
