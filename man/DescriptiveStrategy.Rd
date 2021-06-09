@@ -5,7 +5,11 @@
 \title{Report: Descriptive statistics by strategy}
 \usage{
 DescriptiveStrategy(data, strategy.var, performance.item, performance.test,
+<<<<<<< HEAD
   PartialCredit = FALSE, print = TRUE)
+=======
+  partial.credit = FALSE)
+>>>>>>> 2.0.0
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame} where the 'strategy.var' and
@@ -19,7 +23,7 @@ performance variable}
 \item{performance.test}{A character string with the name of the test
 performance variable}
 
-\item{PartialCredit}{Logical. It can be used when the item is partial credit
+\item{partial.credit}{Logical. It can be used when the item is partial credit
 score.}
 
 \item{print}{if \code{FALSE}, instead of printing table and statistics, a 

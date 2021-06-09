@@ -8,19 +8,17 @@
 #' @param strategy.summary strategy.summary
 #' @param performance.mean performance.mean
 #' @param country.id  A string with the name of the countries variable. It is "quo()" type.
-#' @param ylab.text A character string giving the text of the y-axis in the plot
-#' @param xlab.text A character string giving the text of the x-axis in the plot
-#' @param ylim.vector A numeric vector with the limits of the y-axis in the plot
-#' @param xlim.vector A numeric vector with the limits of the x-axis in the plot
+#' @param ylab A character string giving the text of the y-axis in the plot
+#' @param xlab A character string giving the text of the x-axis in the plot
+#' @param ylim A numeric vector with the limits of the y-axis in the plot
+#' @param xlim A numeric vector with the limits of the x-axis in the plot
 #'
 #' @return This function returns a data frame and a plot
 ScatterPlotbyPerformance <- function(data, strategy.summary, performance.mean,
-                                     country.id, ylab.text = "", xlab.text = "",
-                                     ylim.vector, xlim.vector) {
+                                     country.id, ylab, xlab, ylim, xlim) {
 
     graphics::plot(data[[strategy.summary]], data[[performance.mean]],
-                   xlab = xlab.text, ylab = ylab.text,
-                   ylim = ylim.vector, xlim = xlim.vector)
+                   xlab = xlab, ylab = ylab, ylim = ylim, xlim = xlim)
     graphics::text(data[[strategy.summary]], data[[performance.mean]],
                    labels = data[[country.id]], cex = 0.6, pos = 3)
 }

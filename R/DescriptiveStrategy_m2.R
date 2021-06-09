@@ -10,9 +10,9 @@
 #'   performance variable
 #' @param performance.test A character string with the name of the test
 #'   performance variable
-#' @param PartialCredit Logical. It can be used when the item is partial credit
+#' @param partial.credit Logical. It can be used when the item is partial credit
 #'   score.
-#' @param print if \code{FALSE}, instead of printing table and statistics, a 
+#' @param print if \code{FALSE}, instead of printing table and statistics, a
 #'   list is created with the output .
 #'
 #' @return This function returns a report with a descriptive analysis of the
@@ -22,10 +22,9 @@
 #' m2$DescriptiveStrategy(cp025q01.treated, "votat", "CP025Q01", "PV1CPRO")
 #'
 DescriptiveStrategy <- function(data, strategy.var, performance.item,
-                                performance.test, PartialCredit = FALSE,
-                                print = TRUE) {
-    if (PartialCredit == TRUE) {
-        # Frequency table (N): categorical variables with partialCredit: only
+                                performance.test, partial.credit = FALSE) {
+    if (partial.credit) {
+        # Frequency table (N): categorical variables with partial.credit: only
         # accepts options: 0, 0.5 and 1
         tab.freqitem <- as.data.frame(table(data[, performance.item]))
         for (i in seq(length(tab.freqitem$Var1))) {
@@ -179,7 +178,7 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
         pander::pandoc.table(tab.perftest, split.tables = 100)
 
         message(paste0("Biserial/Polyserial correlation = ",
-                    round(polyserial.cor[1], 4), "\n"))        
+                    round(polyserial.cor[1], 4), "\n"))
     } else {
         if (prod(dim(table(data[, c(strategy.var, performance.item)]))) == 4) {
             phi.crosstab <- psych::phi(table(data[, c(strategy.var,
