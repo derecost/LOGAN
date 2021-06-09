@@ -3,7 +3,6 @@
 \docType{package}
 \name{LOGAN}
 \alias{LOGAN}
-\alias{LOGAN-package}
 \title{LOGAN: Log File Analysis in International Large-scale Assessments}
 \description{
 This package enables users to handle the dataset cleaning for

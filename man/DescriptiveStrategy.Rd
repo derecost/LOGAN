@@ -4,12 +4,14 @@
 \alias{DescriptiveStrategy}
 \title{Report: Descriptive statistics by strategy}
 \usage{
-DescriptiveStrategy(data, strategy.var, performance.item, performance.test,
-<<<<<<< HEAD
-  PartialCredit = FALSE, print = TRUE)
-=======
-  partial.credit = FALSE)
->>>>>>> 2.0.0
+DescriptiveStrategy(
+  data,
+  strategy.var,
+  performance.item,
+  performance.test,
+  partial.credit = FALSE,
+  print = FALSE
+)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame} where the 'strategy.var' and
@@ -26,7 +28,7 @@ performance variable}
 \item{partial.credit}{Logical. It can be used when the item is partial credit
 score.}
 
-\item{print}{if \code{FALSE}, instead of printing table and statistics, a 
+\item{print}{if \code{FALSE}, instead of printing table and statistics, a
 list is created with the output .}
 }
 \value{

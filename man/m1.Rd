@@ -4,7 +4,9 @@
 \name{m1}
 \alias{m1}
 \title{Module 1: Time}
-\format{An object of class \code{module} (inherits from \code{list}) of length 5.}
+\format{
+An object of class \code{module} (inherits from \code{list}) of length 5.
+}
 \usage{
 m1
 }

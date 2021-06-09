@@ -22,7 +22,8 @@
 #' m2$DescriptiveStrategy(cp025q01.treated, "votat", "CP025Q01", "PV1CPRO")
 #'
 DescriptiveStrategy <- function(data, strategy.var, performance.item,
-                                performance.test, partial.credit = FALSE) {
+                                performance.test, partial.credit = FALSE,
+                                print = FALSE) {
     if (partial.credit) {
         # Frequency table (N): categorical variables with partial.credit: only
         # accepts options: 0, 0.5 and 1

@@ -4,12 +4,7 @@
 \alias{PlotStrategybyCatPerformance}
 \title{Check response time by var}
 \usage{
-<<<<<<< HEAD
-PlotStrategybyCatPerformance(data, strategy.var, categ.var,
-  namexlab = "", nameylab = "")
-=======
 PlotStrategybyCatPerformance(data, strategy.var, categ.var, xlab, ylab)
->>>>>>> 2.0.0
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}

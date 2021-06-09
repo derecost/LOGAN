@@ -4,8 +4,13 @@
 \alias{SummaryTOTbyVar}
 \title{Summary of time on task by var}
 \usage{
-SummaryTOTbyVar(data, tot.var, performance.item, na.rm = FALSE,
-  save.table = TRUE)
+SummaryTOTbyVar(
+  data,
+  tot.var,
+  performance.item,
+  na.rm = FALSE,
+  save.table = TRUE
+)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}

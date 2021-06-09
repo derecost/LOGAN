@@ -1,7 +1,7 @@
 Package: LOGAN
 Title: Log File Analysis in International Large-Scale Assessments
 Version: 2.0.0.9000
-Date: 2019-05-02
+Date: 2021-06-23
 Description: Enables users to handle the dataset cleaning for
     conducting specific analyses with the log files from two international
     educational assessments: the Programme for International Student Assessment
@@ -29,4 +29,4 @@ Imports:
     foreign (>= 0.8-69),
     dplyr, ggplot2, rlang, stringr, magrittr, modules
 Suggests: knitr, rmarkdown, intsvy
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
