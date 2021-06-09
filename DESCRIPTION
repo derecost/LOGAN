@@ -26,4 +26,4 @@ Imports:
     foreign (>= 0.8-69),
     dplyr, ggplot2, rlang, stringr, magrittr, modules
 Suggests: knitr, rmarkdown
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
