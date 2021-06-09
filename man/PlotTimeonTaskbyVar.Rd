@@ -4,8 +4,13 @@
 \alias{PlotTimeonTaskbyVar}
 \title{Check response time by var}
 \usage{
-PlotTimeonTaskbyVar(data, tot.var, performance.item, namexlab,
-  nameylab = "Density")
+PlotTimeonTaskbyVar(
+  data,
+  tot.var,
+  performance.item,
+  namexlab,
+  nameylab = "Density"
+)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}

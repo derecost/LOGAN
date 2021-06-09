@@ -4,8 +4,13 @@
 \alias{DescriptiveStrategy}
 \title{Report: Descriptive statistics by strategy}
 \usage{
-DescriptiveStrategy(data, strategy.var, performance.item, performance.test,
-  PartialCredit = FALSE)
+DescriptiveStrategy(
+  data,
+  strategy.var,
+  performance.item,
+  performance.test,
+  PartialCredit = FALSE
+)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame} where the 'strategy.var' and

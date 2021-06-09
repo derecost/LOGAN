@@ -4,7 +4,9 @@
 \name{m0}
 \alias{m0}
 \title{Module 0: Data preparation}
-\format{An object of class \code{module} (inherits from \code{list}) of length 6.}
+\format{
+An object of class \code{module} (inherits from \code{list}) of length 6.
+}
 \usage{
 m0
 }
