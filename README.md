@@ -1,3 +1,6 @@
+![](https://www.r-pkg.org/badges/version/LOGAN)
+![](https://cranlogs.r-pkg.org/badges/grand-total/LOGAN)
+
 # LOGAN
 
 An R package for log file analysis. It can be used as a standalone R package or as a backend for the accompanying Shiny application.
@@ -14,7 +17,7 @@ In order to use LOGAN, you can install it directly in R. An illustration of the 
 
 The latest official, stable version of LOGAN is available on [CRAN](https://cran.r-project.org) and can be installed like any other R package, i.e., by issuing the following in your R prompt:
 
-```
+```r
 install.packages("LOGAN")
 ```
 
@@ -24,7 +27,7 @@ install.packages("LOGAN")
 
 To install LOGAN from GitHub, first make sure you have an up-to-date version of the `devtools` package installed in your machine. Then, run the following command in you R terminal:
 
-```
+```r
 devtools::install_github("derecost/LOGAN")
 ```
 
