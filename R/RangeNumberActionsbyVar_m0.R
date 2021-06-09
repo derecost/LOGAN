@@ -10,8 +10,10 @@
 #' @param save.table if \code{TRUE}, will save the table generated as an object
 #'   of class \code{data.frame}. Otherwise, will print the table in pandoc
 #'   format, but the object will not be saved (even if the user assigns it to an object)
-#' @return This function returns a \code{data.frame} with the number of students
-#'   and number de actions (min-max) aggregated by a specific variable.
+#' @return By default, this function returns a \code{data.frame} with the
+#'   number of students and number de actions (min-max) aggregated by a 
+#'   specific variable. If \code{save.table == FALSE}, however, it will print a 
+#'   pandoc table instead.
 #' @examples
 #' m0$RangeNumberActionsbyVar(cp025q01.treated, NewID, CNT, save.table = FALSE)
 #' 

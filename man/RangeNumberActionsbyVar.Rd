@@ -19,8 +19,10 @@ of class \code{data.frame}. Otherwise, will print the table in pandoc
 format, but the object will not be saved (even if the user assigns it to an object)}
 }
 \value{
-This function returns a \code{data.frame} with the number of students
-  and number de actions (min-max) aggregated by a specific variable.
+By default, this function returns a \code{data.frame} with the
+  number of students and number de actions (min-max) aggregated by a 
+  specific variable. If \code{save.table == FALSE}, however, it will print a 
+  pandoc table instead.
 }
 \description{
 This is a function that reports the number of students and number de actions

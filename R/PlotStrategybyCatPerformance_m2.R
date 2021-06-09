@@ -6,8 +6,8 @@
 #' @param data A \code{matrix} or \code{data.frame}
 #' @param strategy.var strategy variable
 #' @param categ.var categorizing variable
-#' @param namexlab name of the variable in the x-axis
-#' @param nameylab name of the variable in the y-axis
+#' @param xlab name of the variable in the x-axis
+#' @param ylab name of the variable in the y-axis
 #'
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
@@ -24,7 +24,7 @@
 #'                                  "Proficiency levels", "Percentage")
 #'
 PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var,
-                                         namexlab, nameylab) {
+                                         xlab, ylab) {
     `%>%` <- magrittr::`%>%`  # Placeholder before removal of pipes
      n <- NULL # Works around the "no visible binding for global variable" note
      freq <- NULL # Works around the "no visible binding for global variable" note
@@ -55,6 +55,6 @@ PlotStrategybyCatPerformance <- function(data, strategy.var, categ.var,
                            vjust = 1.1, color = "white",
                            position = ggplot2::position_dodge(0.9),
                            size = 3.5) +
-        ggplot2::xlab(namexlab) +
-        ggplot2::ylab(nameylab)
+        ggplot2::xlab(xlab) +
+        ggplot2::ylab(ylab)
 }
