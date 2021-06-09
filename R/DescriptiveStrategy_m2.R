@@ -12,15 +12,18 @@
 #'   performance variable
 #' @param PartialCredit Logical. It can be used when the item is partial credit
 #'   score.
+#' @param print if \code{FALSE}, instead of printing table and statistics, a 
+#'   list is created with the output .
 #'
 #' @return This function returns a report with a descriptive analysis of the
-#'   strategy and students performance
+#'   strategy and students performance.
 #'
 #' @examples
 #' m2$DescriptiveStrategy(cp025q01.treated, "votat", "CP025Q01", "PV1CPRO")
 #'
 DescriptiveStrategy <- function(data, strategy.var, performance.item,
-                                performance.test, PartialCredit = FALSE) {
+                                performance.test, PartialCredit = FALSE,
+                                print = TRUE) {
     if (PartialCredit == TRUE) {
         # Frequency table (N): categorical variables with partialCredit: only
         # accepts options: 0, 0.5 and 1
@@ -86,15 +89,11 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
         ))
 
     colnames(tab.print) <- c("Construct", "Scale","Relat. Freq.", "Frequencies", "Total N")
-    message("\n Frequency table - Individual level")
-    pander::pandoc.table(tab.print,split.tables = 100)
 
     #Chi-squared test of independence
     crostab.freqvotat <- table(data[, c(strategy.var, performance.item)])
     xtest.crostab <- stats::chisq.test(crostab.freqvotat)
 
-    message("Measures of association between ", strategy.var, " and ",
-        performance.item, " - Individual level")
     crostab.freqvotat <- rbind(crostab.freqvotat, apply(crostab.freqvotat, 2, sum))
     crostab.freqvotat <- cbind(crostab.freqvotat, apply(crostab.freqvotat, 1, sum))
     crostab.freqvotat <- cbind(row.names(crostab.freqvotat),
@@ -107,14 +106,6 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
 
     value.p <- ifelse(round(xtest.crostab$p.value,4) < 0.01, "0.01",
                       round(xtest.crostab$p.value,4))
-    pander::pandoc.table(crostab.freqvotat,split.tables = 100)
-    message(paste0("Chi-squared = ",round(xtest.crostab$statistic, 2),", df = ",
-               xtest.crostab$parameter, ", p-value < ", value.p, "\n"))
-
-    if (prod(dim(table(data[, c(strategy.var, performance.item)]))) == 4) {
-        phi.crostab <- psych::phi(table(data[, c(strategy.var, performance.item)]))
-        message(paste0("Phi coefficient = ", round(phi.crostab, 4), "\n"))
-    }
 
     #Summary table: continua variables - Summary of  PV1CPRO  by strategy
     for (j in seq(length(tab.freqvotat$Var1))) {
@@ -165,12 +156,44 @@ DescriptiveStrategy <- function(data, strategy.var, performance.item,
                           tot.general, tab.perftest)
     colnames(tab.perftest) <- c("Statistics", "Total",
                                 colnames(tab.perftest)[3:length(colnames(tab.perftest))])
-
-    message("\n Summary of ", performance.test, " by ", strategy.var,
-            " - Individual level")
-    pander::pandoc.table(tab.perftest, split.tables = 100)
     polyserial.cor <- psych::polyserial(x = as.matrix(data[, performance.test]),
                                         y = as.matrix(data[, strategy.var]))
-    message(paste0("Biserial/Polyserial correlation = ",
-                   round(polyserial.cor[1], 4), "\n"))
+    if (print) {
+        message("\nFrequency table - Individual level")
+        pander::pandoc.table(tab.print,split.tables = 100)
+
+        message("Measures of association between ", strategy.var, " and ",
+                performance.item, " - Individual level")
+        pander::pandoc.table(crostab.freqvotat,split.tables = 100)
+        message(paste0("Chi-squared = ", round(xtest.crostab$statistic, 2),
+                ", df = ",
+                xtest.crostab$parameter, ", p-value < ", value.p, "\n"))
+        if (prod(dim(table(data[, c(strategy.var, performance.item)]))) == 4) {
+            phi.crosstab <- psych::phi(table(data[, c(strategy.var,
+                                                     performance.item)]))
+            message(paste0("Phi coefficient = ", round(phi.crosstab, 4), "\n"))
+        }
+
+        message("\nSummary of ", performance.test, " by ", strategy.var,
+                " - Individual level")
+        pander::pandoc.table(tab.perftest, split.tables = 100)
+
+        message(paste0("Biserial/Polyserial correlation = ",
+                    round(polyserial.cor[1], 4), "\n"))        
+    } else {
+        if (prod(dim(table(data[, c(strategy.var, performance.item)]))) == 4) {
+            phi.crosstab <- psych::phi(table(data[, c(strategy.var,
+                                                     performance.item)]))
+        }
+        # Converting tab.perftest to data frame
+        tab.perftest_df <- data.frame(apply(tab.perftest[, -1], 2, as.numeric),
+                                      row.names = tab.perftest[, 1])
+        out <- list(frequency_table = tab.print,
+                    frequency_votat = crostab.freqvotat,
+                    chi_square = xtest.crostab,
+                    phi = phi.crosstab,
+                    performance_test = as.data.frame(tab.perftest)
+        )
+        return(out)
+    }
 }

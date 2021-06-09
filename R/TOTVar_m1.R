@@ -14,16 +14,13 @@
 #' @return This function returns a \code{data.frame} with the number of students
 #'   and number de actions (min-max) aggregated by a specific variable.
 #' @examples
-#' m1$TOTVar(cp025q01.treated, "CP025Q01.START", "CP025Q01.END", divBy = 60,
-#'           tot.var = "CP025Q01.TOT")
+#' df <- m1$TOTVar(cp025q01.treated, "CP025Q01.START", "CP025Q01.END",
+#'                 divBy = 60, tot.var = "CP025Q01.TOT")
+#' str(df)
 #'
-TOTVar <- function(data, starttime.vec, endtime.vec, divBy = NA, tot.var) {
+TOTVar <- function(data, starttime.vec, endtime.vec, divBy = 1, tot.var) {
     for (i in seq(length(starttime.vec))) {
-        if (is.na(divBy)) {
-            data$TOT <- data[[endtime.vec[i]]] - data[[starttime.vec[i]]]
-        } else{
-            data$TOT <- (data[[endtime.vec[i]]] - data[[starttime.vec[i]]]) / divBy
-        }
+        data$TOT <- data[[endtime.vec[i]]] - data[[starttime.vec[i]]] / divBy
         names(data)[length(data)] <- tot.var
     }
     return(data)

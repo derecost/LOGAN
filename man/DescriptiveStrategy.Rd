@@ -5,7 +5,7 @@
 \title{Report: Descriptive statistics by strategy}
 \usage{
 DescriptiveStrategy(data, strategy.var, performance.item, performance.test,
-  PartialCredit = FALSE)
+  PartialCredit = FALSE, print = TRUE)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame} where the 'strategy.var' and
@@ -21,10 +21,13 @@ performance variable}
 
 \item{PartialCredit}{Logical. It can be used when the item is partial credit
 score.}
+
+\item{print}{if \code{FALSE}, instead of printing table and statistics, a 
+list is created with the output .}
 }
 \value{
 This function returns a report with a descriptive analysis of the
-  strategy and students performance
+  strategy and students performance.
 }
 \description{
 This is a function that reports a descriptive analysis of the strategy and
