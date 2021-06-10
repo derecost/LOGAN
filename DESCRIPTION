@@ -14,6 +14,7 @@ Authors@R: c(
     person("Waldir", "Leoncio",
             email = "waldir.leoncio@gmail.com", role = c("aut"))
     )
+URL: https://github.com/derecost/LOGAN
 BugReports: https://github.com/derecost/LOGAN/issues
 License: GPL-3
 Encoding: UTF-8
