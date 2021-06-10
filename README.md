@@ -6,9 +6,9 @@
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R build status](https://github.com/derecost/LOGAN/workflows/R-CMD-check/badge.svg)](https://github.com/derecost/LOGAN/actions)
 
-# LOGAN
+# LOGAN: Log File Analysis in International Large-Scale Assessments
 
-An R package for log file analysis. It can be used as a standalone R package or as a backend for the accompanying Shiny application.
+LOGAN is an R package for log file analysis. It can be used as a standalone R package or as a backend for the accompanying Shiny application.
 
 # Licence
 
