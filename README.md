@@ -1,5 +1,10 @@
 ![](https://www.r-pkg.org/badges/version/LOGAN)
 ![](https://cranlogs.r-pkg.org/badges/grand-total/LOGAN)
+[![](https://img.shields.io/github/languages/code-size/derecost/LOGAN.svg)](https://github.com/derecost/LOGAN)
+[![Dependencies](https://tinyverse.netlify.com/badge/LOGAN)](https://cran.r-project.org/package=LOGAN)
+[![License: GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://cran.r-project.org/web/licenses/GPL-3)
+[![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R build status](https://github.com/derecost/LOGAN/workflows/R-CMD-check/badge.svg)](https://github.com/derecost/LOGAN/actions)
 
 # LOGAN
 
@@ -40,7 +45,7 @@ LOGAN is currently under active development, so it is always a good idea to chec
 After installing LOGAN, either through CRAN or GitHub, the package can be used after issuing `library(LOGAN)` in R.
 
 LOGAN is organized in modules, so each function must be called as a subset of
-their modules, e.g. `m0$CleanActions()` instead of `CleanActions()`. However, 
+their modules, e.g. `m0$CleanActions()` instead of `CleanActions()`. However,
 calls to function documentation and examples must be made directly, e.g.
 `?CleanActions` and `example(CleanActions)`.
 
