@@ -1,0 +1,13 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+inst/style.md
+data/fullDatasets/
+tests/testthat/test.Shiny.R
+
+# Functions to be excluded from LOGAN 1.0.0
+R/RangeTimeonTaskbyVar_m1.R
+R/BoxplotStrategybyPerformance_m2.R
+R/DataArcSinebyPerformance_m2.R
+R/FreqActionsSummary_m2.R
+R/ScatterPlotbyPerformance_m2.R
+R/VarActionPosition_m2.R

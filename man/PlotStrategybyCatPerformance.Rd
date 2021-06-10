@@ -4,7 +4,7 @@
 \alias{PlotStrategybyCatPerformance}
 \title{Check response time by var}
 \usage{
-PlotStrategybyCatPerformance(data, strategy.var, categ.var, namexlab, nameylab)
+PlotStrategybyCatPerformance(data, strategy.var, categ.var, xlab, ylab)
 }
 \arguments{
 \item{data}{A \code{matrix} or \code{data.frame}}
@@ -13,9 +13,9 @@ PlotStrategybyCatPerformance(data, strategy.var, categ.var, namexlab, nameylab)
 
 \item{categ.var}{categorizing variable}
 
-\item{namexlab}{name of the variable in the x-axis}
+\item{xlab}{name of the variable in the x-axis}
 
-\item{nameylab}{name of the variable in the y-axis}
+\item{ylab}{name of the variable in the y-axis}
 }
 \value{
 This function returns a \code{data.frame} with the number of students

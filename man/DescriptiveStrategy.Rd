@@ -9,7 +9,8 @@ DescriptiveStrategy(
   strategy.var,
   performance.item,
   performance.test,
-  PartialCredit = FALSE
+  partial.credit = FALSE,
+  print = FALSE
 )
 }
 \arguments{
@@ -24,12 +25,15 @@ performance variable}
 \item{performance.test}{A character string with the name of the test
 performance variable}
 
-\item{PartialCredit}{Logical. It can be used when the item is partial credit
+\item{partial.credit}{Logical. It can be used when the item is partial credit
 score.}
+
+\item{print}{if \code{FALSE}, instead of printing table and statistics, a
+list is created with the output .}
 }
 \value{
 This function returns a report with a descriptive analysis of the
-  strategy and students performance
+  strategy and students performance.
 }
 \description{
 This is a function that reports a descriptive analysis of the strategy and
